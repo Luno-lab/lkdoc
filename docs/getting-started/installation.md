@@ -72,7 +72,6 @@ npm install @luno-kit/core
 - Pre-built React components (`ConnectButton`, `LunoKitProvider`)
 - Complete theming system with CSS variables
 - Responsive design optimized for mobile and desktop
-- Includes all functionality from `@luno-kit/react`
 
 ### @luno-kit/react  
 - React hooks for wallet management (`useConnect`, `useAccount`, etc.)
@@ -163,13 +162,6 @@ LunoKit supports all modern browsers:
 - Safari 14+
 - Edge 90+
 
-## Node.js Support
-
-For server-side rendering or build tools:
-
-- Node.js 18+
-- Works with all modern bundlers (Webpack, Vite, Rollup, etc.)
-
 ## Wallet Extensions Required
 
 Users need to install wallet browser extensions to connect:
@@ -188,7 +180,7 @@ Now that you have LunoKit installed, let's [create your first ConnectButton](/ge
 
 If you encounter installation issues:
 
-1. Make sure you're using a supported Node.js version (18+)
+1. Make sure you're using a supported Node.js version (20.18.0+)
 2. Clear your package manager cache and reinstall
 3. Check for conflicting dependencies
 4. [Open an issue](https://github.com/Luno-lab/LunoKit/issues) if problems persist

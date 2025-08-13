@@ -1,6 +1,6 @@
 # Chains
 
-LunoKit supports all Substrate-based chains including Polkadot, Kusama, parachains, and custom chains. This guide shows you how to configure and use different chains in your application.
+LunoKit supports almost all Substrate-based chains including Polkadot, Kusama, parachains, and custom chains. This guide shows you how to configure and use different chains in your application.
 
 ## Built-in Chains
 
@@ -15,7 +15,7 @@ import {
 } from '@luno-kit/react'
 
 const config = createConfig({
-  appName: 'My App',
+  appName: 'My Lunokit App',
   chains: [polkadot, kusama, westend, paseo],
   connectors: [polkadotjs()],
 })
@@ -29,67 +29,6 @@ const config = createConfig({
 | `kusama` | Kusama canary network | Mainnet |
 | `westend` | Polkadot testnet | Testnet |
 | `paseo` | Community testnet | Testnet |
-
-## Chain Configuration
-
-Each built-in chain includes:
-
-```tsx
-// Example: Polkadot chain configuration
-{
-  genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
-  name: 'Polkadot',
-  nativeCurrency: { name: 'Polkadot', symbol: 'DOT', decimals: 10 },
-  rpcUrls: {
-    webSocket: ['wss://rpc.polkadot.io', 'wss://polkadot.api.onfinality.io/public-ws'],
-    http: ['https://rpc.polkadot.io'],
-  },
-  ss58Format: 0,
-  blockExplorers: { default: { name: 'Subscan', url: 'https://polkadot.subscan.io' } },
-  chainIconUrl: '...' // SVG icon data
-}
-```
-
-## Multi-chain Setup
-
-Configure multiple chains for users to switch between:
-
-```tsx
-import { createConfig, polkadot, kusama, westend } from '@luno-kit/react'
-
-const config = createConfig({
-  appName: 'Multi-chain App',
-  chains: [
-    polkadot,    // Main production network
-    kusama,      // Canary network
-    westend,     // Testing
-  ],
-  connectors: [polkadotjs(), subwallet()],
-})
-```
-
-Users can then switch between chains using the ConnectButton or programmatically:
-
-```tsx
-import { useSwitchChain } from '@luno-kit/react'
-
-function ChainSwitcher() {
-  const { switchChain, chains } = useSwitchChain()
-  
-  return (
-    <div>
-      {chains.map((chain) => (
-        <button
-          key={chain.genesisHash}
-          onClick={() => switchChain({ chainId: chain.genesisHash })}
-        >
-          Switch to {chain.name}
-        </button>
-      ))}
-    </div>
-  )
-}
-```
 
 ## Custom Chains
 
@@ -108,7 +47,6 @@ const myCustomChain = defineChain({
   },
   rpcUrls: {
     webSocket: ['wss://my-chain-rpc.example.com'],
-    http: ['https://my-chain-rpc.example.com']
   },
   ss58Format: 42,
   blockExplorers: { 
@@ -122,7 +60,7 @@ const myCustomChain = defineChain({
 })
 
 const config = createConfig({
-  appName: 'Custom Chain App',
+  appName: 'My Lunokit App',
   chains: [myCustomChain],
   connectors: [polkadotjs()],
 })
@@ -143,8 +81,6 @@ When defining a custom chain, these fields are required:
 - `blockExplorers`: Block explorer configuration
 - `chainIconUrl`: Chain icon (SVG/PNG URL or data URI)
 - `testnet`: Boolean to mark as testnet
-- `customTypes`: Custom type definitions
-- `customRpc`: Custom RPC methods
 
 ## Parachains
 
@@ -174,87 +110,6 @@ const moonbeam = defineChain({
 })
 ```
 
-## Chain Switching
-
-### Programmatic Switching
-
-```tsx
-import { useSwitchChain } from '@luno-kit/react'
-
-function MyComponent() {
-  const { switchChain, isPending } = useSwitchChain()
-  
-  const handleSwitch = async () => {
-    try {
-      await switchChain({ 
-        chainId: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3' // Polkadot
-      })
-    } catch (error) {
-      console.error('Failed to switch chain:', error)
-    }
-  }
-  
-  return (
-    <button onClick={handleSwitch} disabled={isPending}>
-      {isPending ? 'Switching...' : 'Switch to Polkadot'}
-    </button>
-  )
-}
-```
-
-### Current Chain Information
-
-```tsx
-import { useChain } from '@luno-kit/react'
-
-function ChainDisplay() {
-  const { chain } = useChain()
-  
-  if (!chain) return <div>No chain selected</div>
-  
-  return (
-    <div>
-      <img src={chain.chainIconUrl} alt={chain.name} width={24} height={24} />
-      <span>{chain.name}</span>
-      <span>({chain.nativeCurrency.symbol})</span>
-    </div>
-  )
-}
-```
-
-## Advanced Configuration
-
-### Custom RPC Methods
-
-Add custom RPC methods for specific chains:
-
-```tsx
-const customChain = defineChain({
-  // ... basic config
-  customRpc: {
-    myModule: {
-      customMethod: 'myModule_customMethod',
-    },
-  },
-})
-```
-
-### Custom Types
-
-Define custom types for chains with non-standard runtime:
-
-```tsx
-const customChain = defineChain({
-  // ... basic config
-  customTypes: {
-    CustomStruct: {
-      field1: 'u32',
-      field2: 'Vec<u8>',
-    },
-  },
-})
-```
-
 ### Transport Configuration
 
 Override default transport settings:
@@ -267,40 +122,6 @@ const config = createConfig({
     [polkadot.genesisHash]: 'wss://my-custom-polkadot-rpc.com',
   },
 })
-```
-
-## Best Practices
-
-### Chain Organization
-
-```tsx
-// Group by network type
-const mainnetChains = [polkadot, kusama]
-const testnetChains = [westend, paseo]
-
-// Use appropriate chains for development
-const config = createConfig({
-  chains: process.env.NODE_ENV === 'production' 
-    ? mainnetChains 
-    : [...mainnetChains, ...testnetChains],
-  // ...
-})
-```
-
-### Error Handling
-
-```tsx
-import { useSwitchChain } from '@luno-kit/react'
-
-function ChainSwitcher() {
-  const { switchChain, error } = useSwitchChain()
-  
-  if (error) {
-    return <div>Error switching chain: {error.message}</div>
-  }
-  
-  // ... rest of component
-}
 ```
 
 ## Next Steps

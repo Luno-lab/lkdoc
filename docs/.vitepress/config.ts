@@ -15,12 +15,13 @@ export default defineConfig({
 
   themeConfig: {
     logo: { src: '/logo-light.svg', width: 24, height: 24 },
-    
+
     nav: [
       { text: 'Guide', link: '/overview/introduction', activeMatch: '/overview/|/getting-started/' },
       { text: 'Hooks', link: '/hooks/connection/use-connect', activeMatch: '/hooks/' },
       { text: 'Advanced', link: '/advanced/custom-connect-button', activeMatch: '/advanced/' },
       { text: 'Examples', link: '/examples/vite', activeMatch: '/examples/' },
+      { text: 'Faq', link: '/faq/runtime-errors', activeMatch: '/faq/' },
       { text: 'DeepWiki', link: 'https://deepwiki.com/Luno-lab/LunoKit', target: '_blank' }
     ],
 
@@ -41,11 +42,10 @@ export default defineConfig({
             { text: 'Chains', link: '/getting-started/chains' },
             { text: 'Wallets', link: '/getting-started/wallets' },
             { text: 'Theming', link: '/getting-started/theming' },
-            { text: 'Account Management', link: '/getting-started/account-management' }
           ]
-        }
+        },
       ],
-      
+
       '/getting-started/': [
         {
           text: '📖 Overview',
@@ -62,7 +62,6 @@ export default defineConfig({
             { text: 'Chains', link: '/getting-started/chains' },
             { text: 'Wallets', link: '/getting-started/wallets' },
             { text: 'Theming', link: '/getting-started/theming' },
-            { text: 'Account Management', link: '/getting-started/account-management' }
           ]
         }
       ],
@@ -144,6 +143,15 @@ export default defineConfig({
             { text: 'Next.js App Router', link: '/examples/nextjs-app' },
             { text: 'Next.js Pages Router', link: '/examples/nextjs-pages' },
             { text: 'Create React App', link: '/examples/cra' }
+          ]
+        }
+      ],
+
+      '/faq/': [
+        {
+          text: '❓ FAQ',
+          items: [
+            { text: 'Runtime Errors', link: '/faq/runtime-errors' },
           ]
         }
       ]

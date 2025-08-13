@@ -117,24 +117,6 @@ When connected, displays account info, balance, and chain selector:
 />
 ```
 
-### Chain-focused Button
-```tsx
-<ConnectButton 
-  chainStatus="full" 
-  showBalance={false}
-  label="Select Network"
-/>
-```
-
-### Balance-focused Button
-```tsx
-<ConnectButton 
-  chainStatus="icon" 
-  showBalance={true}
-  accountStatus="address"
-/>
-```
-
 ## Behavior
 
 ### Click Actions
@@ -165,14 +147,20 @@ Automatically handles common errors:
 - Network connection issues
 - Account access denied
 
-## Accessibility
+[//]: # (## ``Accessibility)
 
-The `ConnectButton` includes proper accessibility features:
+[//]: # (``)
 
-- **ARIA labels**: Descriptive labels for screen readers
-- **Keyboard navigation**: Full keyboard support
-- **Focus management**: Proper focus handling in modals
-- **Color contrast**: Meets WCAG guidelines
+[//]: # (The `ConnectButton` includes proper accessibility features:)
+
+[//]: # ()
+[//]: # (- **ARIA labels**: Descriptive labels for screen readers)
+
+[//]: # (- **Keyboard navigation**: Full keyboard support)
+
+[//]: # (- **Focus management**: Proper focus handling in modals)
+
+[//]: # (- **Color contrast**: Meets WCAG guidelines)
 
 ## Styling
 
@@ -210,7 +198,8 @@ Apply custom styling:
 The `ConnectButton` works seamlessly with LunoKit hooks:
 
 ```tsx
-import { useAccount, useConnect, ConnectionStatus } from '@luno-kit/react'
+import { useAccount, useConnect } from '@luno-kit/react'
+import type { ConnectionStatus } from '@luno-kit/react'
 
 function CustomComponent() {
   const { account } = useAccount()
