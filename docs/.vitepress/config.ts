@@ -87,6 +87,12 @@ export default defineConfig({
           ]
         },
         {
+          text: '⚡ Api Client',
+          items: [
+            { text: 'useApi', link: '/hooks/api/use-api' }
+          ]
+        },
+        {
           text: '🌐 Chain',
           items: [
             { text: 'useChain', link: '/hooks/chain/use-chain' },
