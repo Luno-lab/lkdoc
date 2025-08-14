@@ -25,6 +25,7 @@ export default defineConfig({
       { text: 'DeepWiki', link: 'https://deepwiki.com/Luno-lab/LunoKit', target: '_blank' }
     ],
 
+    outline: [2,3],
     sidebar: {
       '/overview/': [
         {

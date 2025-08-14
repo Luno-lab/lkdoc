@@ -37,7 +37,7 @@ import {
   watchEffect
 } from "./chunk-HVR2FF6M.js";
 
-// node_modules/@vueuse/shared/index.mjs
+// node_modules/@vueuse/snippets/index.mjs
 function computedEager(fn, options) {
   var _a;
   const result = shallowRef();

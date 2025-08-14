@@ -1,4 +1,4 @@
-// node_modules/@vue/devtools-shared/dist/index.js
+// node_modules/@vue/devtools-snippets/dist/index.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
