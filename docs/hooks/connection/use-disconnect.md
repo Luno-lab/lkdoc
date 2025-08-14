@@ -90,7 +90,7 @@ These are the functions you can call to initiate and manage disconnections.
 | `disconnectAsync` | `(options?: { onSuccess?: () => void; onError?: (error: Error) => void; onSettled?: () => void }) => Promise<void>` | Async version of disconnect |
 | `reset` | `() => void` | Reset the disconnection state |
 
-### Data & Status
+### Data & State
 These properties provide information about the current state of the disconnection.
 
 | Property | Type | Description |

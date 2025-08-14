@@ -162,7 +162,7 @@ interface Chain {
     default?: { name: string; url: string };
     [key: string]: { name: string; url: string } | undefined;
   };
-  testnet?: boolean;
+  testnet: boolean;
   chainIconUrl: string
 }
 ```

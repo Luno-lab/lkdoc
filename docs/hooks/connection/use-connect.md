@@ -104,7 +104,7 @@ These are the functions you can call to initiate and manage connections.
 | `connectAsync` | `(variables: { connectorId: string; targetChainId?: string; }, options?: { onSuccess?: () => void; onError?: (error: Error) => void; onSettled?: () => void }) => void) => Promise<void>`                        | Async version of connect |
 | `reset` | `() => void`                                                            | Reset the connection state |
 
-### Data & Status
+### Data & State
 
 These properties provide information about the current state of the connection.
 
