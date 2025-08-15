@@ -98,8 +98,6 @@ export default defineConfig({
             { text: 'useChain', link: '/hooks/chain/use-chain' },
             { text: 'useChains', link: '/hooks/chain/use-chains' },
             { text: 'useSwitchChain', link: '/hooks/chain/use-switch-chain' },
-            { text: 'useGenesisHash', link: '/hooks/chain/use-genesis-hash' },
-            { text: 'useSs58Format', link: '/hooks/chain/use-ss58-format' }
           ]
         },
         {
@@ -114,10 +112,11 @@ export default defineConfig({
         {
           text: '📊 Data',
           items: [
-            { text: 'useApi', link: '/hooks/data/use-api' },
             { text: 'useBlockNumber', link: '/hooks/data/use-block-number' },
             { text: 'useRuntimeVersion', link: '/hooks/data/use-runtime-version' },
-            { text: 'useSubscription', link: '/hooks/data/use-subscription' }
+            { text: 'useGenesisHash', link: '/hooks/data/use-genesis-hash' },
+            { text: 'useSs58Format', link: '/hooks/data/use-ss58-format' },
+            { text: 'useSubscription', link: '/hooks/data/use-subscription' },
           ]
         },
         {

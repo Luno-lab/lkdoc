@@ -58,7 +58,7 @@ function BalanceChecker() {
       
       // Get current block
       const block = await api.rpc.chain_getBlock()
-      console.log('Current block:', block.block.header.number.toString())
+      console.log('Current block:', block.block.header.number)
     } catch (error) {
       console.error('API call failed:', error)
     }
