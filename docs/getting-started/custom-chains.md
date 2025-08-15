@@ -92,8 +92,3 @@ const moonbeamChain = defineChain({
 | `testnet` | `boolean` | Yes | Whether the chain is a testnet |
 | `chainIconUrl` | `string` | Yes | URL to chain icon |
 | `blockExplorers` | `{ default?: { name: string; url: string }; [key: string]: { name: string; url: string } \| undefined }` | No | Block explorer configuration |
-
-## Related Documentation
-
-- [Custom Wallets](/getting-started/custom-wallets) - Add custom wallet support
-- [useChain Hook](/hooks/chain/use-chain) - Chain management

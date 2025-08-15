@@ -149,10 +149,3 @@ interface ConnectorLinks {
 ```
 
 **Note**: The `links` object is always required, but its properties `browserExtension` and `deepLink` are optional and can be empty.
-
-
-## Related Documentation
-
-- [Custom Chains](/getting-started/custom-chains) - Add custom Substrate chains
-- [useConnect Hook](/hooks/connection/use-connect) - Connection management
-- [Core Concepts](/overview/introduction) - LunoKit architecture

@@ -44,6 +44,15 @@ export default defineConfig({
             { text: 'Theming', link: '/getting-started/theming' },
           ]
         },
+        {
+          text: '🔧 Advanced',
+          items: [
+            { text: 'Custom ConnectButton', link: '/getting-started/custom-connect-button' },
+            { text: 'Custom Wallet', link: '/getting-started/custom-wallet' },
+            { text: 'Custom Chains', link: '/getting-started/custom-chains' },
+            { text: 'Custom Theme', link: '/getting-started/custom-theme' },
+          ]
+        }
       ],
 
       '/getting-started/': [
@@ -68,10 +77,9 @@ export default defineConfig({
           text: '🔧 Advanced',
           items: [
             { text: 'Custom ConnectButton', link: '/getting-started/custom-connect-button' },
-            { text: 'Custom Wallets', link: '/getting-started/custom-wallet' },
+            { text: 'Custom Wallet', link: '/getting-started/custom-wallet' },
             { text: 'Custom Chains', link: '/getting-started/custom-chains' },
             { text: 'Custom Theme', link: '/getting-started/custom-theme' },
-            { text: '', link: '/getting-started/signer-integration' }
           ]
         }
       ],

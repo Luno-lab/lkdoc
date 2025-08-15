@@ -106,9 +106,3 @@ This design ensures that:
 - Users can only open account/chain modals when they have an active connection
 - The `open` method will be `undefined` when the modal shouldn't be accessible
 
-## Related Hooks
-
-- [`useConnect`](/hooks/connection/use-connect) - Connection logic
-- [`useAccount`](/hooks/account/use-account) - Account information
-- [`useDisconnect`](/hooks/connection/use-disconnect) - Disconnection logic
-- [`useBalance`](/hooks/account/use-balance) - Account balance

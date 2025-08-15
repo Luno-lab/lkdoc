@@ -271,9 +271,3 @@ export interface LunokitTheme {
   {/* Your app */}
 </LunoKitProvider>
 ```
-
-## Next Steps
-
-- Return to [basic theming](/getting-started/theming)
-- Explore [custom ConnectButton](/getting-started/custom-connect-button)
-- Check out [custom wallets](/getting-started/custom-wallets)
