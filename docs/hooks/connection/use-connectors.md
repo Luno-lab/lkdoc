@@ -91,21 +91,21 @@ The hook returns an array of `Connector` objects:
 
 Each connector object has the following properties:
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `id` | `string` | Unique identifier for the connector |
-| `name` | `string` | Display name of the wallet |
-| `icon` | `string` | URL or path to the wallet icon |
-| `links` | `ConnectorLinks` | Links to browser extension and deep link |
-| `isAvailable()` | `() => Promise<boolean>` | Check if the connector is available |
-| `isInstalled` | `() => boolean` | Check if the wallet extension is installed |
+| Property | Type                                                                                     | Description |
+|----------|------------------------------------------------------------------------------------------|-------------|
+| `id` | `string`                                                                                 | Unique identifier for the connector |
+| `name` | `string`                                                                                 | Display name of the wallet |
+| `icon` | `string`                                                                                 | URL or path to the wallet icon |
+| `links` | [`ConnectorLinks`](#connectorlinks)                                                      | Links to browser extension and deep link |
+| `isAvailable()` | `() => Promise<boolean>`                                                                 | Check if the connector is available |
+| `isInstalled` | `() => boolean`                                                                          | Check if the wallet extension is installed |
 | `connect()` | `(appName: string, chains?: Chain[], targetChainId?: string) => Promise<Array<Account>>` | Connect to the wallet |
-| `disconnect()` | `() => Promise<void>` | Disconnect from the wallet |
-| `getAccounts()` | `() => Promise<Array<Account>>` | Get connected accounts |
-| `getSigner()` | `() => Promise<Signer \| undefined>` | Get the signer for transactions |
-| `signMessage()` | `(message: string, address: string, chainId?: string) => Promise<string \| undefined>` | Sign a message |
-| `hasConnectionUri()` | `() => boolean` | Check if connection URI is available |
-| `getConnectionUri()` | `() => Promise<string \| undefined>` | Get connection URI for mobile wallets |
+| `disconnect()` | `() => Promise<void>`                                                                    | Disconnect from the wallet |
+| `getAccounts()` | `() => Promise<Array<Account>>`                                                          | Get connected accounts |
+| `getSigner()` | `() => Promise<Signer \| undefined>`                                                     | Get the signer for transactions |
+| `signMessage()` | `(message: string, address: string, chainId?: string) => Promise<string \| undefined>`   | Sign a message |
+| `hasConnectionUri()` | `() => boolean`                                                                          | Check if connection URI is available |
+| `getConnectionUri()` | `() => Promise<string \| undefined>`                                                     | Get connection URI for mobile wallets |
 
 ### Related Types
 

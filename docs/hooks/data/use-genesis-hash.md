@@ -59,5 +59,5 @@ The hook returns an object with the following properties:
 
 - [`useBlockNumber`](/hooks/data/use-block-number) - Get current block number
 - [`useRuntimeVersion`](/hooks/data/use-runtime-version) - Get runtime version information
-- [`useSs58Format`](/hooks/chain/use-ss58-format) - Get SS58 format information
+- [`useSs58Format`](/hooks/data/use-ss58-format) - Get SS58 format information
 - [`useSubscription`](/hooks/data/use-subscription) - Base hook for subscriptions

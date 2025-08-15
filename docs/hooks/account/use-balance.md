@@ -100,27 +100,29 @@ The hook accepts a configuration object:
 
 The hook returns an object with the following properties:
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `data` | `AccountBalance \| undefined` | Account balance information |
-| `error` | `Error \| undefined` | Error if balance query failed |
-| `isLoading` | `boolean` | Whether the balance query is in progress |
+| Property | Type                                               | Description |
+|----------|----------------------------------------------------|-------------|
+| `data` | [`AccountBalance`](#accountbalance) \| `undefined` | Account balance information |
+| `error` | `Error \| undefined`                               | Error if balance query failed |
+| `isLoading` | `boolean`                                          | Whether the balance query is in progress |
 
-### AccountBalance Object
+### Related Types
+
+#### AccountBalance
 
 The `data` object contains:
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `free` | `bigint` | Free balance amount |
-| `total` | `bigint` | Total balance (free + reserved) |
-| `reserved` | `bigint` | Reserved balance amount |
-| `transferable` | `bigint` | Transferable balance (free - frozen) |
-| `formattedTransferable` | `string` | Human-readable transferable balance |
-| `formattedTotal` | `string` | Human-readable total balance |
-| `locks` | `BalanceLock[]` | Array of balance locks |
+| Property | Type                            | Description |
+|----------|---------------------------------|-------------|
+| `free` | `bigint`                        | Free balance amount |
+| `total` | `bigint`                        | Total balance (free + reserved) |
+| `reserved` | `bigint`                        | Reserved balance amount |
+| `transferable` | `bigint`                        | Transferable balance (free - frozen) |
+| `formattedTransferable` | `string`                        | Human-readable transferable balance |
+| `formattedTotal` | `string`                        | Human-readable total balance |
+| `locks` | [`BalanceLock[]`](#balancelock) | Array of balance locks |
 
-### BalanceLock Object
+#### BalanceLock
 
 Each lock object contains:
 

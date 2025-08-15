@@ -71,5 +71,5 @@ The `data` property represents the SS58 address format prefix used by the chain.
 
 - [`useBlockNumber`](/hooks/data/use-block-number) - Get current block number
 - [`useRuntimeVersion`](/hooks/data/use-runtime-version) - Get runtime version information
-- [`useGenesisHash`](/hooks/chain/use-genesis-hash) - Get genesis hash information
+- [`useGenesisHash`](/hooks/data/use-genesis-hash) - Get genesis hash information
 - [`useSubscription`](/hooks/data/use-subscription) - Base hook for subscriptions

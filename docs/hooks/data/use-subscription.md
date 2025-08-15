@@ -151,5 +151,5 @@ The hook returns an object with the following properties:
 
 - [`useBlockNumber`](/hooks/data/use-block-number) - Subscribe to block number updates
 - [`useRuntimeVersion`](/hooks/data/use-runtime-version) - Get runtime version information
-- [`useGenesisHash`](/hooks/chain/use-genesis-hash) - Get genesis hash information
-- [`useSs58Format`](/hooks/chain/use-ss58-format) - Get SS58 format information
+- [`useGenesisHash`](/hooks/data/use-genesis-hash) - Get genesis hash information
+- [`useSs58Format`](/hooks/data/use-ss58-format) - Get SS58 format information

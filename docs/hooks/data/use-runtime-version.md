@@ -71,6 +71,6 @@ The `data` property is of type `SubstrateRuntimeVersion` from the dedot library,
 ## Related Hooks
 
 - [`useBlockNumber`](/hooks/data/use-block-number) - Get current block number
-- [`useGenesisHash`](/hooks/chain/use-genesis-hash) - Get genesis hash information
-- [`useSs58Format`](/hooks/chain/use-ss58-format) - Get SS58 format information
+- [`useGenesisHash`](/hooks/data/use-genesis-hash) - Get genesis hash information
+- [`useSs58Format`](/hooks/data/use-ss58-format) - Get SS58 format information
 - [`useSubscription`](/hooks/data/use-subscription) - Base hook for subscriptions
