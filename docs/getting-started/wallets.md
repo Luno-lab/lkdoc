@@ -82,6 +82,5 @@ function WalletList() {
 
 ## Next Steps
 
-- Learn about [account management](/getting-started/account-management)
 - Explore [theming options](/getting-started/theming)
 - Check out [connection hooks](/hooks/connection/use-connect)
