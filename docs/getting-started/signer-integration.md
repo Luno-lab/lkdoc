@@ -649,4 +649,4 @@ const validatePayload = (payload: SignerPayload): void => {
 
 - [useSigner Hook](/hooks/transaction/use-signer) - Signer hook reference
 - [Transaction Hooks](/hooks/transaction/) - Transaction-related hooks
-- [Custom Wallets](/advanced/custom-wallets) - Custom wallet integration
+- [Custom Wallets](/getting-started/custom-wallets) - Custom wallet integration

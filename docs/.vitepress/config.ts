@@ -19,7 +19,6 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/overview/introduction', activeMatch: '/overview/|/getting-started/' },
       { text: 'Hooks', link: '/hooks/connection/use-connect', activeMatch: '/hooks/' },
-      { text: 'Advanced', link: '/advanced/custom-connect-button', activeMatch: '/advanced/' },
       { text: 'Examples', link: '/examples/vite', activeMatch: '/examples/' },
       { text: 'Faq', link: '/faq/runtime-errors', activeMatch: '/faq/' },
       { text: 'DeepWiki', link: 'https://deepwiki.com/Luno-lab/LunoKit', target: '_blank' }
@@ -63,6 +62,16 @@ export default defineConfig({
             { text: 'Chains', link: '/getting-started/chains' },
             { text: 'Wallets', link: '/getting-started/wallets' },
             { text: 'Theming', link: '/getting-started/theming' },
+          ]
+        },
+        {
+          text: '🔧 Advanced',
+          items: [
+            { text: 'Custom ConnectButton', link: '/getting-started/custom-connect-button' },
+            { text: 'Custom Wallets', link: '/getting-started/custom-wallet' },
+            { text: 'Custom Chains', link: '/getting-started/custom-chains' },
+            { text: 'Custom Theme', link: '/getting-started/custom-theme' },
+            { text: '', link: '/getting-started/signer-integration' }
           ]
         }
       ],
@@ -127,21 +136,6 @@ export default defineConfig({
           ]
         }
       ],
-
-      '/advanced/': [
-        {
-          text: '🔧 Advanced',
-          items: [
-            { text: 'Custom ConnectButton', link: '/advanced/custom-connect-button' },
-            { text: 'Custom Wallets', link: '/advanced/custom-wallets' },
-            { text: 'Custom Chains', link: '/advanced/custom-chains' },
-            { text: 'Custom Theme', link: '/advanced/custom-theme' },
-            { text: 'React Hooks Only', link: '/advanced/hooks-only' },
-            { text: 'Signer Integration', link: '/advanced/signer-integration' }
-          ]
-        }
-      ],
-
       '/examples/': [
         {
           text: '💡 Framework Examples',

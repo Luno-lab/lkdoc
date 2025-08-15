@@ -59,4 +59,4 @@ Provides more space for wallet lists and account information:
 
 - [ConnectButton](/getting-started/connect-button) - Main connection component
 - [Theming](/getting-started/theming) - Customize modal appearance
-- [Custom ConnectButton](/advanced/custom-connect-button) - Build custom modals
+- [Custom ConnectButton](/getting-started/custom-connect-button) - Build custom modals

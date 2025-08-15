@@ -580,5 +580,5 @@ Since you're not using LunoKit's UI components, you'll need your own CSS:
 ## Related Documentation
 
 - [Hook Reference](/hooks/) - Complete hooks documentation
-- [Custom ConnectButton](/advanced/custom-connect-button) - Build custom connection UI
-- [Custom Themes](/advanced/custom-theme) - Style your custom components
+- [Custom ConnectButton](/getting-started/custom-connect-button) - Build custom connection UI
+- [Custom Themes](/getting-started/custom-theme) - Style your custom components
