@@ -117,6 +117,7 @@ export default defineConfig({
             { text: 'useGenesisHash', link: '/hooks/data/use-genesis-hash' },
             { text: 'useSs58Format', link: '/hooks/data/use-ss58-format' },
             { text: 'useSubscription', link: '/hooks/data/use-subscription' },
+            { text: 'useConfig', link: '/hooks/data/use-config' },
           ]
         },
         {
