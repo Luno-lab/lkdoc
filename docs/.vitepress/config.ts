@@ -137,12 +137,6 @@ export default defineConfig({
             { text: 'useConfig', link: '/hooks/data/use-config' },
           ]
         },
-        {
-          text: '⚙️ Config',
-          items: [
-            { text: 'useConfig', link: '/hooks/config/use-config' }
-          ]
-        }
       ],
       '/examples/': [
         {
