@@ -148,4 +148,5 @@ interface ConnectorLinks {
 }
 ```
 
-**Note**: The `links` object is always required, but its properties `browserExtension` and `deepLink` are optional and can be empty.
+> [!TIP]
+> The `links` object is always required, but its properties `browserExtension` and `deepLink` are optional and can be empty.

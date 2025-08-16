@@ -134,7 +134,8 @@ interface SignMessageData {
 }
 ```
 
-**Note**: This hook requires an active wallet connection and account. The signature is generated using the private key associated with the connected account. The signed message can be verified later using the public key and signature.
+> [!TIP]
+> This hook requires an active wallet connection and account. The signature is generated using the private key associated with the connected account. The signed message can be verified later using the public key and signature.
 
 ## Related Hooks
 

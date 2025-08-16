@@ -62,7 +62,8 @@ interface Signer extends InjectedSigner {
 }
 ```
 
-**Inherits from**: `InjectedSigner` (dedot library)
+> [!TIP]
+> **Inherits from**: `InjectedSigner` (dedot library)
 
 The `Signer` interface provides methods for:
 - Signing transactions
@@ -70,7 +71,8 @@ The `Signer` interface provides methods for:
 - Managing cryptographic operations
 - Interacting with the wallet's signing capabilities
 
-**Note**: This hook automatically manages the signer lifecycle. It will attempt to retrieve the signer whenever the active connector or account changes. The signer is required for most transaction-related operations in LunoKit.
+> [!TIP]
+> This hook automatically manages the signer lifecycle. It will attempt to retrieve the signer whenever the active connector or account changes. The signer is required for most transaction-related operations in LunoKit.
 
 ## Related Hooks
 

@@ -65,7 +65,8 @@ The `data` property represents the SS58 address format prefix used by the chain.
 | `42` | Substrate | Substrate development chains |
 | `Custom` | Chain-specific | Other networks |
 
-**Note**: The hook first attempts to fetch the SS58 format from the chain's runtime constants. If that fails, it falls back to the chain configuration or defaults to 42 (Substrate format).
+> [!TIP]
+> The hook first attempts to fetch the SS58 format from the chain's runtime constants. If that fails, it falls back to the chain configuration or defaults to 42 (Substrate format).
 
 ## Related Hooks
 

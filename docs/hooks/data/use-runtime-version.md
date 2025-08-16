@@ -66,7 +66,8 @@ The `data` property is of type `SubstrateRuntimeVersion` from the dedot library,
 | `authoringVersion` | `number` | The authoring version of the runtime |
 | `specName` | `string` | The name of the runtime specification |
 
-**Note**: The runtime version is fetched using React Query and automatically cached. The hook will only refetch when the chain changes or when the cache is invalidated.
+> [!TIP]
+> The runtime version is fetched using React Query and automatically cached. The hook will only refetch when the chain changes or when the cache is invalidated.
 
 ## Related Hooks
 

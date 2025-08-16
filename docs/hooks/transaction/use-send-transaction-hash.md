@@ -130,9 +130,11 @@ interface SendTransactionHashVariables {
 type HexString = `0x${string}`;  // Hexadecimal string starting with 0x
 ```
 
-**Note**: This hook is similar to `useSendTransaction` but returns the transaction hash immediately after the transaction is signed and sent, without waiting for the transaction to be included in a block or finalized. Use this when you only need the transaction hash.
+> [!TIP]
+> This hook is similar to `useSendTransaction` but returns the transaction hash immediately after the transaction is signed and sent, without waiting for the transaction to be included in a block or finalized. Use this when you only need the transaction hash.
 
-**Important**: In Polkadot, transaction hashes are not guaranteed to be unique across the entire chain, although they are generally unique within a block. This means you cannot reliably query transaction information by hash alone. For more information, refer to the [Polkadot.js documentation](https://polkadot.js.org/docs/api/FAQ/#which-api-can-i-use-to-query-by-transaction-hash).
+> [!WARNING]
+> In Polkadot, transaction hashes are not guaranteed to be unique across the entire chain, although they are generally unique within a block. This means you cannot reliably query transaction information by hash alone. For more information, refer to the [Polkadot.js documentation](https://polkadot.js.org/docs/api/FAQ/#which-api-can-i-use-to-query-by-transaction-hash).
 
 ## Related Hooks
 

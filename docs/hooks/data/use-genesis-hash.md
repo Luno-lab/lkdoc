@@ -51,9 +51,9 @@ The hook returns an object with the following properties:
 | `error` | `Error \| null` | Any error that occurred during the query |
 | `isLoading` | `boolean` | Whether the query is currently loading |
 
-**Note**: The `data` property is of type `HexString` from the dedot library, which represents a `0x${string}`.
-
-**Note**: The genesis hash is fetched using React Query and cached indefinitely. The hook will only refetch when the chain changes or when the cache is invalidated.
+> [!TIP]
+> The `data` property is of type `HexString` from the dedot library, which represents a `0x${string}`. \
+The genesis hash is fetched using React Query and cached indefinitely. The hook will only refetch when the chain changes or when the cache is invalidated.
 
 ## Related Hooks
 

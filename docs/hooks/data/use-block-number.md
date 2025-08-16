@@ -51,7 +51,8 @@ The hook returns an object with the following properties:
 | `isLoading` | `boolean`             | Whether the subscription is currently loading |
 
 
-**Note**: The block number automatically updates in real-time as new blocks are produced on the chain. `useBlockNumber` internally uses `useSubscription` to subscribe to block number updates from the chain.
+> [!TIP]
+> The block number automatically updates in real-time as new blocks are produced on the chain. `useBlockNumber` internally uses `useSubscription` to subscribe to block number updates from the chain.
 
 ## Related Hooks
 

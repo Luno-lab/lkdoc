@@ -1,8 +1,19 @@
 import { defineConfig } from 'vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 export default defineConfig({
   title: 'LunoKit',
   description: 'React library for Polkadot wallet connections',
+  
+  vite: {
+    plugins: [groupIconVitePlugin()]
+  },
+  
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin)
+    }
+  },
   head: [
     ['link', { rel: 'icon', href: '/logo-light.svg' }],
     ['meta', { name: 'theme-color', content: '#E6007A' }],
@@ -20,7 +31,7 @@ export default defineConfig({
       { text: 'Guide', link: '/overview/introduction', activeMatch: '/overview/|/getting-started/' },
       { text: 'Hooks', link: '/hooks/connection/use-connect', activeMatch: '/hooks/' },
       { text: 'Examples', link: '/examples/vite', activeMatch: '/examples/' },
-      { text: 'Faq', link: '/faq/runtime-errors', activeMatch: '/faq/' },
+      { text: 'FAQ', link: '/faq/runtime-errors', activeMatch: '/faq/' },
       { text: 'DeepWiki', link: 'https://deepwiki.com/Luno-lab/LunoKit', target: '_blank' }
     ],
 
@@ -162,7 +173,13 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Luno-lab/LunoKit' },
-      { icon: 'x', link: 'https://x.com/lunolab_xyz' }
+      { icon: 'x', link: 'https://x.com/lunolab_xyz' },
+      { 
+        icon: {
+          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Telegram</title><path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785L24 5.173c.321-1.236-.541-1.818-1.335-1.456z"/></svg>'
+        }, 
+        link: 'https://t.me/+sPFPCbmbG0gyYzE1' 
+      }
     ],
 
     footer: {

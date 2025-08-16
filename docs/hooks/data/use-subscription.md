@@ -145,7 +145,8 @@ The hook returns an object with the following properties:
 | `error` | `Error \| undefined` | Any error that occurred during subscription |
 | `isLoading` | `boolean` | Whether the subscription is currently loading |
 
-**Note**: This hook internally manages subscription lifecycle, automatically subscribing when enabled and unsubscribing when the component unmounts or when the query key changes. `useSubscription` automatically listens for value changes, but only for query-based subscriptions. For RPC-based queries, please refer to the examples in [`useApi`](/hooks/api/use-api).
+> [!TIP]
+> This hook internally manages subscription lifecycle, automatically subscribing when enabled and unsubscribing when the component unmounts or when the query key changes. `useSubscription` automatically listens for value changes, but only for query-based subscriptions. For RPC-based queries, please refer to the examples in [`useApi`](/hooks/api/use-api).
 
 ## Related Hooks
 

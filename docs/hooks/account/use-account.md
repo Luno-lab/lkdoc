@@ -54,7 +54,8 @@ The `account` object contains:
 | `type` | `KeypairType \| undefined` | Account type (optional) |
 
 
-**Note**: The address is automatically converted to match the current chain's SS58 format when available.
+> [!TIP]
+> The address is automatically converted to match the current chain's SS58 format when available.
 
 ## Related Hooks
 

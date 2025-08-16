@@ -156,7 +156,8 @@ type TxStatus = 'idle' | 'signing' | 'success' | 'failed';
 type DetailedTxStatus = 'idle' | 'broadcasting' | 'inBlock' | 'finalized' | 'invalid' | 'dropped';
 ```
 
-**Important**: In Polkadot, transaction hashes are not guaranteed to be unique across the entire chain, although they are generally unique within a block. This means you cannot reliably query transaction information by hash alone. For more information, refer to the [Polkadot.js documentation](https://polkadot.js.org/docs/api/FAQ/#which-api-can-i-use-to-query-by-transaction-hash).
+> [!WARNING]
+> In Polkadot, transaction hashes are not guaranteed to be unique across the entire chain, although they are generally unique within a block. This means you cannot reliably query transaction information by hash alone. For more information, refer to the [Polkadot.js documentation](https://polkadot.js.org/docs/api/FAQ/#which-api-can-i-use-to-query-by-transaction-hash).
 
 ## Related Hooks
 

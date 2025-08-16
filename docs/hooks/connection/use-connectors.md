@@ -140,7 +140,8 @@ interface Account {
 interface Signer extends InjectedSigner {}
 ```
 
-**Note**: The `Signer` interface extends `InjectedSigner` from the `dedot` library. For complete type information, refer to the [dedot documentation](https://docs.dedot.dev).
+> [!TIP]
+> The `Signer` interface extends `InjectedSigner` from the `dedot` library. For complete type information, refer to the [dedot documentation](https://docs.dedot.dev).
 
 #### Chain
 

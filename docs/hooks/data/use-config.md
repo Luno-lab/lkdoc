@@ -68,7 +68,8 @@ interface LunoStorage {
 }
 ```
 
-**Note**: This hook provides read-only access to the configuration that was passed to `LunoKitProvider`.
+> [!TIP]
+> This hook provides read-only access to the configuration that was passed to `LunoKitProvider`.
 
 ## Related Hooks
 

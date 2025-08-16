@@ -1,4 +1,4 @@
-// node_modules/@vue/snippets/dist/snippets.esm-bundler.js
+// node_modules/@vue/shared/dist/shared.esm-bundler.js
 function makeMap(str) {
   const map2 = /* @__PURE__ */ Object.create(null);
   for (const key of str.split(",")) map2[key] = 1;
@@ -12603,9 +12603,9 @@ export {
 };
 /*! Bundled license information:
 
-@vue/snippets/dist/snippets.esm-bundler.js:
+@vue/shared/dist/shared.esm-bundler.js:
   (**
-  * @vue/snippets v3.5.18
+  * @vue/shared v3.5.18
   * (c) 2018-present Yuxi (Evan) You and Vue contributors
   * @license MIT
   **)

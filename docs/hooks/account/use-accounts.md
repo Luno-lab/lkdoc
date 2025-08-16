@@ -81,7 +81,8 @@ The hook returns an object with the following properties:
 | `accounts` | `Account[]` | Array of all available accounts with addresses formatted for the current chain |
 | `selectAccount` | `(accountOrPublicKey?: Account \| HexString) => void` | Function to select a specific account |
 
-**Note**: When using `selectAccount` with a `HexString` (publicKey), ensure the account has a valid `publicKey`. If an account is missing its `publicKey`, the selection may fail.
+> [!TIP]
+> When using `selectAccount` with a `HexString` (publicKey), ensure the account has a valid `publicKey`. If an account is missing its `publicKey`, the selection may fail.
 
 ### Account Object
 
@@ -96,7 +97,8 @@ The `account` object contains:
 | `type` | `KeypairType \| undefined` | Account type (optional) |
 
 
-**Note**: Account addresses are automatically converted to match the current chain's SS58 format when available.
+> [!TIP]
+> Account addresses are automatically converted to match the current chain's SS58 format when available.
 
 ## Related Hooks
 
