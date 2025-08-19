@@ -28,6 +28,9 @@ cd LunoKit
 # Install dependencies
 pnpm install
 
+# Build packages
+pnpm build
+
 # Start with-cra example
 pnpm --filter with-cra start
 ```

@@ -28,6 +28,9 @@ cd LunoKit
 # Install dependencies
 pnpm install
 
+# Build packages
+pnpm build
+
 # Start with-nextjs-pages example
 pnpm --filter with-nextjs-pages dev
 ```

@@ -28,6 +28,9 @@ cd LunoKit
 # Install dependencies
 pnpm install
 
+# Build packages
+pnpm build
+
 # Start with-vite example
 pnpm --filter with-vite dev
 ```
