@@ -19,8 +19,17 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en' }],
     ['meta', { property: 'og:title', content: 'LunoKit | React library for Polkadot wallet connections' }],
+    ['meta', { property: 'og:description', content: 'React library for Polkadot wallet connections' }],
     ['meta', { property: 'og:site_name', content: 'LunoKit' }],
     ['meta', { property: 'og:url', content: 'https://docs.lunolab.xyz/' }],
+    ['meta', { property: 'og:image', content: 'https://docs.lunolab.xyz/og-image.png' }],
+    ['meta', { property: 'og:image:width', content: '800' }],
+    ['meta', { property: 'og:image:height', content: '420' }],
+    ['meta', { property: 'og:image:alt', content: 'LunoKit - React library for Polkadot wallet connections' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'LunoKit | React library for Polkadot wallet connections' }],
+    ['meta', { name: 'twitter:description', content: 'React library for Polkadot wallet connections' }],
+    ['meta', { name: 'twitter:image', content: 'https://docs.lunolab.xyz/og-image.png' }],
   ],
 
   themeConfig: {
