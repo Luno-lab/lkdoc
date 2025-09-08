@@ -7,17 +7,18 @@ LunoKit supports almost all Substrate-based chains including Polkadot, Kusama, p
 LunoKit provides pre-configured support for major Polkadot ecosystem chains:
 
 ```tsx
-import {
-  polkadot,
-  kusama,
-  westend,
-  paseo
+import { 
+  polkadot, 
+  kusama, 
+  westend, 
+  paseo, 
+  polkadotjsConnector
 } from '@luno-kit/react'
 
 const config = createConfig({
   appName: 'My Lunokit App',
   chains: [polkadot, kusama, westend, paseo],
-  connectors: [polkadotjs()],
+  connectors: [polkadotjsConnector()],
 })
 ```
 

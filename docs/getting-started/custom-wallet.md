@@ -110,8 +110,8 @@ const config = createConfig({
       }
     }),
     // Built-in wallets
-    polkadotjs(),
-    subwallet(),
+    polkadotjsConnector(),
+    subwalletConnector(),
   ],
 })
 ```

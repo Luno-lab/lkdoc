@@ -6,13 +6,13 @@ The `ConnectButton` is the primary component for wallet connections in LunoKit. 
 
 ```tsx
 import { LunoKitProvider, ConnectButton } from '@luno-kit/ui'
-import { createConfig, polkadot, polkadotjs } from '@luno-kit/react'
+import { createConfig, polkadot, polkadotjsConnector } from '@luno-kit/react'
 import '@luno-kit/ui/styles.css'
 
 const config = createConfig({
   appName: 'My Polkadot App',
   chains: [polkadot],
-  connectors: [polkadotjs()],
+  connectors: [polkadotjsConnector()],
 })
 
 function App() {

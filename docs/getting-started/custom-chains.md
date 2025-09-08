@@ -30,7 +30,7 @@ const myCustomChain = defineChain({
 const config = createConfig({
   appName: 'My App',
   chains: [myCustomChain],
-  connectors: [polkadotjs()],
+  connectors: [polkadotjsConnector()],
 })
 ```
 
