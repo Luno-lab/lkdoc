@@ -106,3 +106,37 @@ This design ensures that:
 - Users can only open account/chain modals when they have an active connection
 - The `open` method will be `undefined` when the modal shouldn't be accessible
 
+## Using LunoProvider Instead of LunoKitProvider
+
+If you prefer to use only the core functionality from `@luno-kit/react` without the UI components from `@luno-kit/ui`, you can use `LunoProvider` directly. However, you must manually set up the `QueryClientProvider` since it's not included in the `LunoProvider`.
+
+### Example with LunoProvider
+
+```tsx
+import { LunoProvider, createConfig } from '@luno-kit/react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+// Create a config
+const config = createConfig({
+  // Your configuration here
+})
+
+// Create a query client
+const queryClient = new QueryClient()
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <LunoProvider config={config}>
+        {/* Your app content */}
+        <CustomConnectButton />
+      </LunoProvider>
+    </QueryClientProvider>
+  )
+}
+```
+
+::: warning
+When using `LunoProvider` directly from `@luno-kit/react` instead of `LunoKitProvider` from `@luno-kit/ui`, you must manually wrap your application with `QueryClientProvider` from `@tanstack/react-query`. Without this, hooks that depend on React Query will not function properly.
+:::
+
