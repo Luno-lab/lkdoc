@@ -6,7 +6,7 @@ The `useBalance` hook provides access to account balance information including f
 
 ```tsx
 import { useBalance } from '@luno-kit/react'
-import type { AccountBalance } from '@luno-kit/react'
+import type { AccountBalance } from '@luno-kit/react/types'
 ```
 
 ## Usage

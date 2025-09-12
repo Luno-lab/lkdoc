@@ -9,7 +9,7 @@ While LunoKit's default `ConnectButton` covers most use cases, you might want to
 ## Basic Custom Button
 
 ```tsx
-import { useConnect, useAccount, useDisconnect, ConnectionStatus } from '@luno-kit/react'
+import { useConnect, useAccount, useDisconnect, type ConnectionStatus } from '@luno-kit/react'
 
 function CustomConnectButton() {
   const { connect, connectors, status } = useConnect()
@@ -62,7 +62,7 @@ If you want to create a custom connect button but still use LunoKit's pre-built 
 
 ```tsx
 import { useConnectModal, useAccountModal, useChainModal } from '@luno-kit/ui'
-import { useAccount, useStatus, ConnectionStatus } from '@luno-kit/react'
+import { useAccount, useStatus, type ConnectionStatus } from '@luno-kit/react'
 
 function CustomButtonWithModals() {
   const { open: openConnectModal, close: closeConnectModal, isOpen: isConnectModalOpen } = useConnectModal()

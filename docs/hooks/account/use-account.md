@@ -6,6 +6,7 @@ The `useAccount` hook provides access to the currently connected account informa
 
 ```tsx
 import { useAccount } from '@luno-kit/react'
+import type { Account } from '@luno-kit/react/types'
 ```
 
 ## Usage

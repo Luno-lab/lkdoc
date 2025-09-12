@@ -46,13 +46,13 @@ function RuntimeVersionDisplay() {
 
 The hook returns an object with the following properties:
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `data` | `SubstrateRuntimeVersion \| undefined` | Current runtime version information |
-| `error` | `Error \| null` | Any error that occurred during the query |
-| `isLoading` | `boolean` | Whether the query is currently loading |
-| `isError` | `boolean` | Whether there's an error |
-| `isSuccess` | `boolean` | Whether the query was successful |
+| Property | Type                                        | Description |
+|----------|---------------------------------------------|-------------|
+| `data` | [`SubstrateRuntimeVersion`](#substrateruntimeversion-object) \| `undefined` | Current runtime version information |
+| `error` | `Error \| null`                             | Any error that occurred during the query |
+| `isLoading` | `boolean`                                   | Whether the query is currently loading |
+| `isError` | `boolean`                                   | Whether there's an error |
+| `isSuccess` | `boolean`                                   | Whether the query was successful |
 
 ### SubstrateRuntimeVersion Object
 

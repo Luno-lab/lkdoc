@@ -88,6 +88,7 @@ function MultiQuerySubscription() {
       { fn: api.query.balances.locks, args: ['address'] }
     ],
     options: {
+      enabled: !!address,
       transform: (results) => ({
         balance: results[0].data.free.toString(),
         locks: results[1].map(lock => lock.amount.toString())
@@ -113,12 +114,12 @@ function MultiQuerySubscription() {
 
 The hook takes a configuration object with the following properties:
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `queryKey` | `string \| number` | Unique identifier for the subscription |
-| `factory` | `(api: LegacyClient) => SubscriptionFn` | Function that creates the subscription |
-| `params` | `TArgs \| (api: LegacyClient) => QueryMultiItem[]` | Parameters for the subscription or function to generate them |
-| `options` | `UseSubscriptionOptions<TData, TTransformed>` | Optional configuration options |
+| Property | Type                                                                     | Description |
+|----------|--------------------------------------------------------------------------|-------------|
+| `queryKey` | `string \| number`                                                       | Unique identifier for the subscription |
+| `factory` | `(api: LegacyClient) => SubscriptionFn`                                  | Function that creates the subscription |
+| `params` | `TArgs \| (api: LegacyClient) => QueryMultiItem[]`                       | Parameters for the subscription or function to generate them |
+| `options` | [`UseSubscriptionOptions<TData, TTransformed>`](#usesubscriptionoptions) | Optional configuration options |
 
 ### UseSubscriptionOptions
 

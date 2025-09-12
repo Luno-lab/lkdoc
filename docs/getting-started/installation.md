@@ -166,11 +166,15 @@ LunoKit supports all modern browsers:
 
 Users need to install wallet browser extensions to connect:
 
-- [Polkadot{.js} Extension](https://polkadot.js.org/extension/)
-- [SubWallet](https://subwallet.app/)
-- [Talisman](https://talisman.xyz/)
-- [Nova Wallet](https://novawallet.io/) (mobile app)
-- [PolkaGate](https://polkagate.xyz/)
+- **Polkadot{.js}** - [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/)
+- **SubWallet** - [https://subwallet.app](https://subwallet.app)
+- **Talisman** - [https://talisman.xyz](https://talisman.xyz)
+- **Nova Wallet** - [https://novawallet.io](https://novawallet.io)
+- **PolkaGate** - [https://polkagate.xyz](https://polkagate.xyz)
+- **WalletConnect** - [https://reown.com/](https://reown.com/)
+- **Enkrypt** - [https://www.enkrypt.com](https://www.enkrypt.com)
+- **Fearless** - [https://fearlesswallet.io](https://fearlesswallet.io)
+- **Mimir** - [https://mimir.global](https://mimir.global)
 
 ## Next Steps
 

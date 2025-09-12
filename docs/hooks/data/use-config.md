@@ -6,6 +6,7 @@ The `useConfig` hook provides access to the current LunoKit configuration, inclu
 
 ```tsx
 import { useConfig } from '@luno-kit/react'
+import type { Config } from '@luno-kit/react/types'
 ```
 
 ## Usage
@@ -48,7 +49,7 @@ The hook returns a `Config` object or `undefined`:
 ### Config
 
 ```tsx
-interface Config extends LunoApiOptions {
+interface Config {
   readonly appName: string;                                    // Application name
   readonly chains: readonly Chain[];                           // Available chains
   readonly connectors: readonly Connector[];                   // Available wallet connectors
