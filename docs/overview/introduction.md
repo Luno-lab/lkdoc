@@ -19,22 +19,36 @@ Out of the box, LunoKit provides:
 
 LunoKit supports all major Polkadot ecosystem wallets:
 
-- **Polkadot{.js}** - The original Polkadot wallet browser extension
-- **SubWallet** - Comprehensive wallet for Polkadot and Substrate ecosystems
-- **Talisman** - Beautiful, user-friendly Polkadot wallet
-- **Nova Wallet** - Mobile-first Polkadot wallet
-- **PolkaGate** - Feature-rich Polkadot wallet extension
-- **WalletConnect** - Protocol for connecting wallets across devices
+- **Polkadot{.js}**
+- **SubWallet**
+- **Talisman**
+- **Nova Wallet**
+- **PolkaGate**
+- **WalletConnect**
+- **Enkrypt**
+- **Fearless**
+- **Mimir**
+
+For wallet installation links, see the [Installation](/getting-started/installation.html#wallet-extensions-required) section.
 
 ## Supported Chains
 
 Works with all Substrate-based chains:
 
 - **Polkadot** - The main Polkadot relay chain
+  - **Polkadot Asset Hub** - Polkadot's primary parachain for assets
+  - **Polkadot Coretime** - Parachain for Polkadot's coretime functionality
+  - **Polkadot Collectives** - Parachain for on-chain governance collectives
+  - **Polkadot People** - Identity and reputation parachain for Polkadot
 - **Kusama** - Polkadot's canary network
+  - **Kusama Asset Hub** - Kusama's primary parachain for assets
+  - **Kusama People** - Identity and reputation parachain for Kusama
+  - **Kusama Coretime** - Parachain for Kusama's coretime functionality
 - **Westend** - Polkadot testnet
+  - **Westend Asset Hub** - Asset hub parachain for Westend testnet
 - **Paseo** - Community testnet
-- **Parachains** - All Polkadot and Kusama parachains
+  - **Paseo Asset Hub** - Asset hub parachain for Paseo testnet
+  - **Paseo Passet Hub** - Secondary asset parachain for Paseo testnet
 - **Custom Chains** - Any Substrate-based blockchain
 
 ## Architecture

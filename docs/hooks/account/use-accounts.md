@@ -6,7 +6,7 @@ The `useAccounts` hook provides access to all available accounts and allows sele
 
 ```tsx
 import { useAccounts } from '@luno-kit/react'
-import type { Account } from '@luno-kit/react'
+import type { Account } from '@luno-kit/react/types'
 ```
 
 ## Usage

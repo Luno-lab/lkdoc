@@ -9,7 +9,8 @@ LunoKit supports almost any Substrate-based blockchain. This guide shows you how
 ## Basic Custom Chain
 
 ```tsx
-import { defineChain, createConfig } from '@luno-kit/react'
+import { createConfig } from '@luno-kit/react'
+import { defineChain } from '@luno-kit/react/utils'
 
 const myCustomChain = defineChain({
   genesisHash: '0x123...',

@@ -6,7 +6,9 @@ The `ConnectButton` is the primary component for wallet connections in LunoKit. 
 
 ```tsx
 import { LunoKitProvider, ConnectButton } from '@luno-kit/ui'
-import { createConfig, polkadot, polkadotjsConnector } from '@luno-kit/react'
+import { createConfig } from '@luno-kit/react'
+import { polkadot } from '@luno-kit/react/chains'
+import { polkadotjsConnector } from '@luno-kit/react/connectors'
 import '@luno-kit/ui/styles.css'
 
 const config = createConfig({
@@ -96,6 +98,19 @@ When connected, displays account info, balance, and chain selector:
 
 {/* Hides balance */}
 <ConnectButton showBalance={false} />
+```
+
+### `displayPreference`
+- **Type**: `'address' | 'name'`
+- **Default**: `'address'`
+- **Description**: Controls whether to display the account address or name when connected
+
+```tsx
+{/* Shows account address (default) */}
+<ConnectButton displayPreference="address" />
+
+{/* Shows account name */}
+<ConnectButton displayPreference="name" />
 ```
 
 ### `className`

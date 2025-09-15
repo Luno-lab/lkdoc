@@ -10,15 +10,15 @@ LunoKit provides two main connector types for integrating custom wallets:
 
 ## Window Inject Wallets
 
-For browser extension wallets that inject into the `window` object, use the `CommonConnector`:
+For browser extension wallets that inject into the `window` object, use the `InjectConnector`:
 
 ```tsx
-import { CommonConnector } from '@luno-kit/react'
+import { InjectConnector } from '@luno-kit/react/connectors'
 
 export const customWalletConnector = () => {
-  return new CommonConnector({
-    id: 'custom-wallet',
-    name: 'Custom Wallet',
+  return new InjectConnector({
+    id: 'inject-wallet',
+    name: 'Inject Wallet',
     icon: 'data:image/svg+xml;base64,...', // Your wallet's icon
     links: {
       browserExtension: 'https://your-wallet.com/download',
@@ -31,11 +31,11 @@ export const customWalletConnector = () => {
 ### Example: Polkadot.js Extension
 
 ```tsx
-import { CommonConnector } from '@luno-kit/react'
+import { InjectConnector } from '@luno-kit/react/connectors'
 import { polkadotjsSVG } from '../config/logos/generated'
 
 export const polkadotjsConnector = () => {
-  return new CommonConnector({
+  return new InjectConnector({
     id: 'polkadot-js',
     name: 'Polkadot{.js}',
     icon: polkadotjsSVG,
@@ -51,7 +51,14 @@ export const polkadotjsConnector = () => {
 For mobile wallets that use WalletConnect protocol, use the `WalletConnectConnector`:
 
 ```tsx
-import { WalletConnectConnector } from '@luno-kit/react'
+import { WalletConnectConnector } from '@luno-kit/react/connectors'
+import type { Metadata } from '@walletconnect/universal-provider'
+
+type WalletConnectConfig = {
+  projectId: string;
+  relayUrl?: string;
+  metadata?: Metadata;
+}
 
 export const customMobileWalletConnector = (config: WalletConnectConfig) => {
   return new WalletConnectConnector({
@@ -73,7 +80,13 @@ export const customMobileWalletConnector = (config: WalletConnectConfig) => {
 import { WalletConnectConnector } from '@luno-kit/react'
 import { novaSVG } from '../config/logos/generated'
 
-export const novaConnector = (config: NovaConnectorConfig) => {
+type WalletConnectConfig = {
+  projectId: string;
+  relayUrl?: string;
+  metadata?: Metadata;
+}
+
+export const novaConnector = (config: WalletConnectConfig) => {
   return new WalletConnectConnector({
     id: 'nova',
     name: 'Nova Wallet',
@@ -81,7 +94,7 @@ export const novaConnector = (config: NovaConnectorConfig) => {
     links: {
       browserExtension: 'https://novawallet.io',
     },
-    ...config as WalletConnectConfig,
+    ...config,
   })
 }
 ```
@@ -91,7 +104,9 @@ export const novaConnector = (config: NovaConnectorConfig) => {
 Add your custom connectors to the LunoKit configuration:
 
 ```tsx
-import { createConfig, polkadot, kusama } from '@luno-kit/react'
+import { createConfig } from '@luno-kit/react'
+import { polkadot, kusama } from '@luno-kit/react/chains'
+import { polkadotjsConnector } from '@luno-kit/react/connectors'
 import { customWalletConnector } from './connectors/customWallet'
 import { customMobileWalletConnector } from './connectors/customMobileWallet'
 
@@ -111,7 +126,6 @@ const config = createConfig({
     }),
     // Built-in wallets
     polkadotjsConnector(),
-    subwalletConnector(),
   ],
 })
 ```

@@ -6,21 +6,35 @@ LunoKit supports all major Polkadot ecosystem wallets through a unified connecto
 
 LunoKit provides built-in support for these popular Polkadot wallets:
 
-| Wallet | Type | Platforms | Import |
-|--------|------|-----------|--------|
-| Polkadot{.js} | Browser Extension | Desktop | `polkadotjsConnector()` |
-| SubWallet | Browser Extension + Mobile | All | `subwalletConnector()` |
-| Talisman | Browser Extension | Desktop | `talismanConnector()` |
-| PolkaGate | Browser Extension | Desktop | `polkagateConnector()` |
-| Nova Wallet | Mobile App | Mobile | `novaConnector()` |
+| Wallet | Type | Platforms     | Import |
+|--------|------|---------------|--------|
+| Polkadot{.js} | Browser Extension | Desktop       | `polkadotjsConnector()` |
+| SubWallet | Browser Extension + Mobile | All           | `subwalletConnector()` |
+| Talisman | Browser Extension | Desktop       | `talismanConnector()` |
+| PolkaGate | Browser Extension | Desktop       | `polkagateConnector()` |
+| Nova Wallet | Mobile App | Mobile via QR       | `novaConnector()` |
 | WalletConnect | Protocol | Mobile via QR | `walletConnectConnector()` |
+| Enkrypt | Browser Extension | Desktop       | `enkryptConnector()` |
+| Fearless | Browser App | Mobile        | `fearlessConnector()` |
+| Mimir | Multisig Extension | Desktop       | `mimirConnector()` |
 
 ## Basic Configuration
 
 Import and configure the wallets you want to support:
 
 ```tsx
-import { polkadot, kusama, polkagateConnector, subwalletConnector, talismanConnector, polkadotjsConnector, walletConnectConnector, novaConnector } from '@luno-kit/react'
+import { polkadot, kusama } from '@luno-kit/react/chains'
+import { 
+  polkagateConnector, 
+  subwalletConnector, 
+  talismanConnector, 
+  polkadotjsConnector, 
+  walletConnectConnector, 
+  novaConnector, 
+  fearlessConnector, 
+  mimirConnector, 
+  enkryptConnector,
+} from '@luno-kit/react/connectors'
 
 const config = createConfig({
   appName: 'My Lunokit App',
@@ -30,6 +44,9 @@ const config = createConfig({
     subwalletConnector(),
     talismanConnector(),
     polkagateConnector(),
+    enkryptConnector(),
+    fearlessConnector(),
+    mimirConnector(),
     walletConnectConnector({ projectId: xxx }),
     novaConnector({ projectId: xxx }),
   ],

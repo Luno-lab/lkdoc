@@ -6,7 +6,7 @@ The `useChains` hook provides access to all available chains configured in the a
 
 ```tsx
 import { useChains } from '@luno-kit/react'
-import type { Chain } from '@luno-kit/react'
+import type { Chain } from '@luno-kit/react/types'
 ```
 
 ## Usage
@@ -49,7 +49,7 @@ The hook returns an array of `Chain` objects:
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `chains` | `Chain[]` | Array of all available chains configured in the application |
+| `chains` | [`Chain[]`](#chain-object) | Array of all available chains configured in the application |
 
 ### Chain Object
 

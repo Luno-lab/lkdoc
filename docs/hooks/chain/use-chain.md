@@ -6,7 +6,7 @@ The `useChain` hook provides access to the currently selected chain information 
 
 ```tsx
 import { useChain } from '@luno-kit/react'
-import type { Chain } from '@luno-kit/react'
+import type { Chain } from '@luno-kit/react/types'
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ The hook returns an object with the following properties:
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `chain` | `Chain \| undefined` | Current chain information |
+| `chain` | [`Chain`](#chain-object) \| `undefined` | Current chain information |
 | `chainId` | `string \| undefined` | Current chain ID (genesis hash) |
 
 ### Chain Object
