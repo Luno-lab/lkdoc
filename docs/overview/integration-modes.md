@@ -1,6 +1,7 @@
 # API Choices
 
-LunoKit provides flexible integration options depending on your blockchain API preferences.
+LunoKit provides flexible integration options depending on your dapp's technical requirements.
+
 
 ## Default: Dedot Integration
 
@@ -42,7 +43,7 @@ const config = createConfig({
 })
 ```
 
-## Choosing Your Approach
+## Feature Comparison
 
 | Feature | Dedot (Default) | PAPI Integration |
 |---------|----------------|------------------|
