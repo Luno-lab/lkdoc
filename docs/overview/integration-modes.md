@@ -48,10 +48,14 @@ const config = createConfig({
 | Feature | Dedot (Default) | PAPI Integration |
 |---------|----------------|------------------|
 | Wallet Connections | ✅ Full support | ✅ Full support |
+| Account Management | ✅ Full support | ✅ Full support |
+| Chain Switching | ✅ Built-in | ❌ Use PAPI directly |
+| Balance Queries | ✅ Built-in | ❌ Use PAPI directly |
 | Transaction Handling | ✅ Built-in | ❌ Use PAPI directly |
 | Chain Management | ✅ Built-in | ❌ Use PAPI directly |
 | Data Queries | ✅ Built-in | ❌ Use PAPI directly |
 | Signer Access | ✅ useSigner | ✅ usePapiSigner |
+| Message Signing | ✅ Full support | ✅ Full support |
 | UI Components | ✅ Full support | ✅ Full support |
 | Setup Complexity | Simple | Requires PAPI setup |
 
