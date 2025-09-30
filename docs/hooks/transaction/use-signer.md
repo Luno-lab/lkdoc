@@ -17,7 +17,7 @@ import { useSigner } from '@luno-kit/react'
 import { useSigner } from '@luno-kit/react'
 
 function ConditionalSigner() {
-  const { signer, isLoading } = useSigner()
+  const { data: signer, isLoading } = useSigner()
 
   if (isLoading) {
     return <div>⏳ Loading signer...</div>
@@ -42,8 +42,6 @@ function ConditionalSigner() {
 
 The hook returns an object with the following properties:
 
-### Methods
-This hook doesn't provide any methods.
 
 ### Data & Status
 
@@ -57,25 +55,35 @@ This hook doesn't provide any methods.
 ### Signer
 
 ```tsx
+import type { InjectedSigner } from 'dedot/types';
+
 interface Signer extends InjectedSigner {
   // Inherits all properties and methods from InjectedSigner
 }
 ```
 
-> [!TIP]
-> **Inherits from**: `InjectedSigner` (dedot library)
-
 The `Signer` interface provides methods for:
-- Signing transactions
-- Signing messages
-- Managing cryptographic operations
-- Interacting with the wallet's signing capabilities
+- `signPayload`: Signs transaction payloads for submission to the blockchain
+- `signRaw`: Signs arbitrary messages or data with the connected account
 
 > [!TIP]
 > This hook automatically manages the signer lifecycle. It will attempt to retrieve the signer whenever the active connector or account changes. The signer is required for most transaction-related operations in LunoKit.
 
+## Differences from usePapiSigner
+
+The `useSigner` hook provides a LunoKit-compatible signer for use with LunoKit's transaction hooks, while the [`usePapiSigner`](/hooks/transaction/use-papi-signer) hook provides a signer that's compatible with the Polkadot API (papi).
+
+| Feature | `useSigner` | `usePapiSigner`                          |
+|---------|------------|------------------------------------------|
+| Compatibility | LunoKit transaction hooks | Papi                                     |
+| Use case | When using LunoKit for transactions | When integrating with existing papi code |
+| Return value | Includes only the signer | Includes only the signer                 |
+| Required setup | Needs chains in config | Works with chains-free config            |
+
+Choose `useSigner` when using LunoKit's transaction hooks like `useSendTransaction`, and choose `usePapiSigner` when you need to integrate with existing code that uses the Papi directly.
+
 ## Related Hooks
 
-- [`useAccount`](/hooks/account/use-account) - Get current account information
+- [`usePapiSigner`](/hooks/transaction/use-papi-signer) - Get a papi-compatible signer
 - [`useSendTransaction`](/hooks/transaction/use-send-transaction) - Send transactions using the signer
 - [`useSignMessage`](/hooks/transaction/use-sign-message) - Sign messages using the signer

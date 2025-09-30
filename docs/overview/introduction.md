@@ -14,6 +14,8 @@ Out of the box, LunoKit provides:
 - 📱 **Responsive Design** - Mobile-first UI components that work perfectly on all devices
 - 🌐 **Multi-chain Ready** - Polkadot, Kusama, parachains and custom chain support
 - ⚙️ **React Hooks** - Modern React patterns with comprehensive hook library
+- 🧩 **Flexible Integration** - Use only wallet connection features or the full API based on your needs
+- 🔄 **Compatible with Existing Projects** - Seamlessly integrate with papi or other Polkadot libraries
 
 ## Supported Wallets
 
@@ -64,6 +66,39 @@ This modular approach allows you to use only what you need:
 - Use `@luno-kit/ui` for a complete solution with beautiful UI components
 - Use `@luno-kit/react` alone if you want to build custom UI with our hooks
 - Extend `@luno-kit/core` to add custom wallets or chains
+
+## Flexible Integration Options
+
+LunoKit now offers even more flexibility in how you integrate it with your project:
+
+### Complete Solution
+
+Use LunoKit's full API capabilities with built-in chain support and transaction handling:
+
+```tsx
+import { createConfig } from '@luno-kit/react'
+import { polkadot } from '@luno-kit/react/chains'
+
+const config = createConfig({
+  appName: 'My Dapp',
+  chains: [polkadot],
+  connectors: [/* your connectors */],
+})
+```
+
+### Wallet Connection Only
+
+Use LunoKit solely for wallet connections while using your own API solution:
+
+```tsx
+import { createConfig } from '@luno-kit/react'
+
+// No chains required when using only for wallet connection
+const config = createConfig({
+  appName: 'My Dapp',
+  connectors: [/* your connectors */],
+})
+```
 
 ## Getting Started
 

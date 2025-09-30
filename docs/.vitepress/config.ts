@@ -49,7 +49,8 @@ export default defineConfig({
         {
           text: '📖 Overview',
           items: [
-            { text: 'Introduction', link: '/overview/introduction' }
+            { text: 'Introduction', link: '/overview/introduction' },
+            { text: 'IntegrationModes', link: '/overview/integration-modes' },
           ]
         },
         {
@@ -141,8 +142,10 @@ export default defineConfig({
           items: [
             { text: 'useSendTransaction', link: '/hooks/transaction/use-send-transaction' },
             { text: 'useSendTransactionHash', link: '/hooks/transaction/use-send-transaction-hash' },
+            { text: 'useEstimatePaymentInfo', link: '/hooks/transaction/use-estimate-payment-info' },
             { text: 'useSignMessage', link: '/hooks/transaction/use-sign-message' },
-            { text: 'useSigner', link: '/hooks/transaction/use-signer' }
+            { text: 'useSigner', link: '/hooks/transaction/use-signer' },
+            { text: 'usePapiSigner', link: '/hooks/transaction/use-papi-signer' }
           ]
         },
         {
@@ -164,7 +167,8 @@ export default defineConfig({
             { text: 'Vite', link: '/examples/vite' },
             { text: 'Next.js App Router', link: '/examples/nextjs-app' },
             { text: 'Next.js Pages Router', link: '/examples/nextjs-pages' },
-            { text: 'Create React App', link: '/examples/cra' }
+            { text: 'Create React App', link: '/examples/cra' },
+            { text: 'Vite Papi', link: '/examples/vite-papi' },
           ]
         }
       ],

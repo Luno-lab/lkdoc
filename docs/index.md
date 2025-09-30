@@ -35,4 +35,10 @@ features:
   - icon: ⚙️
     title: React Hooks
     details: Modern React patterns with comprehensive hook library
+  - icon: 🧩
+    title: Flexible Integration
+    details: Use only wallet connection features or the full API based on your needs
+  - icon: 🔄
+    title: Compatible with Existing Projects
+    details: Seamlessly integrate with papi or other Polkadot libraries
 ---
