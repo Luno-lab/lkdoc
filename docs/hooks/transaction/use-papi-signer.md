@@ -98,16 +98,16 @@ The `PapiSigner` interface provides:
 
 ## Differences from useSigner
 
-The `usePapiSigner` hook provides a signer that's compatible with the Papi, while the [`useSigner`](/hooks/transaction/use-signer) hook provides a LunoKit-compatible signer for use with LunoKit's transaction hooks.
+The `usePapiSigner` hook provides a signer that's compatible with the PAPI, while the [`useSigner`](/hooks/transaction/use-signer) hook provides a LunoKit-compatible signer for use with LunoKit's transaction hooks.
 
 | Feature | `usePapiSigner` | `useSigner` |
 |---------|-----------------|-------------|
-| Compatibility | Papi | LunoKit transaction hooks |
+| Compatibility | PAPI | LunoKit transaction hooks |
 | Use case | When integrating with existing papi code | When using LunoKit for transactions |
 | Return value | Includes only the signer | Includes only the signer |
 | Required setup | Works with chains-free config | Needs chains in config |
 
-Choose `usePapiSigner` when you need to integrate with existing code that uses the Papi directly, and choose `useSigner` when using LunoKit's transaction hooks like `useSendTransaction`.
+Choose `usePapiSigner` when you need to integrate with existing code that uses the PAPI directly, and choose `useSigner` when using LunoKit's transaction hooks like `useSendTransaction`.
 
 ## Related Hooks
 

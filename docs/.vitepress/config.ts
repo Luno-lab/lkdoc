@@ -168,7 +168,7 @@ export default defineConfig({
             { text: 'Next.js App Router', link: '/examples/nextjs-app' },
             { text: 'Next.js Pages Router', link: '/examples/nextjs-pages' },
             { text: 'Create React App', link: '/examples/cra' },
-            { text: 'Vite Papi', link: '/examples/vite-papi' },
+            { text: 'Vite PAPI', link: '/examples/vite-papi' },
           ]
         }
       ],

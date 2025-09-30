@@ -35,18 +35,18 @@ const config = createConfig({
 })
 ```
 
-### Alternative: Papi Integration
+### Alternative: PAPI Integration
 
-If you prefer to use [Papi](https://papi.how/) for blockchain interactions, you can use LunoKit solely for wallet connections. In this mode, LunoKit provides:
+If you prefer to use [PAPI](https://papi.how/) for blockchain interactions, you can use LunoKit solely for wallet connections. In this mode, LunoKit provides:
 
 - Wallet connection management
 - Account management
-- Papi-compatible signers
+- PAPI-compatible signers
 
-To use LunoKit with Papi, configure LunoKit without specifying chains:
+To use LunoKit with PAPI, configure LunoKit without specifying chains:
 
 ```tsx
-// Papi integration configuration
+// PAPI integration configuration
 import { createConfig } from '@luno-kit/react'
 
 const config = createConfig({
@@ -58,7 +58,7 @@ const config = createConfig({
 
 ## Feature Availability by API Choice
 
-| Feature | With Dedot (Default) | With Papi |
+| Feature | With Dedot (Default) | With PAPI |
 |---------|----------------------|-----------|
 | **Wallet Connections** | ✅ Full support | ✅ Full support |
 | **Account Management** | ✅ Full support | ✅ Full support |
@@ -66,16 +66,16 @@ const config = createConfig({
 | **Transaction Hooks** | ✅ Available<br>`useSendTransaction`<br>`useSendTransactionHash` | ❌ Not available |
 | **Signer Hooks** | ✅ Available<br>`useSigner` | ✅ Available<br>`usePapiSigner` |
 | **API Hooks** | ✅ Available<br>`useApi`<br>`useBalance`<br>etc. | ❌ Not available |
-| **Chain Management** | ✅ Built-in | ❌ Manual with Papi |
-| **Data Queries** | ✅ Built-in | ❌ Manual with Papi |
+| **Chain Management** | ✅ Built-in | ❌ Manual with PAPI |
+| **Data Queries** | ✅ Built-in | ❌ Manual with PAPI |
 
 ## Important Notes
 
-1. **When using Papi:**
+1. **When using PAPI:**
    - You cannot use LunoKit's transaction hooks (`useSendTransaction`, etc.)
    - You cannot use LunoKit's API hooks (`useApi`, `useBalance`, etc.)
-   - You must use `usePapiSigner` to get a Papi-compatible signer
-   - You must handle chain connections and transactions using Papi directly
+   - You must use `usePapiSigner` to get a PAPI-compatible signer
+   - You must handle chain connections and transactions using PAPI directly
 
 2. **When using Dedot (default):**
    - All LunoKit hooks and features are available
@@ -91,14 +91,14 @@ const config = createConfig({
 - You prefer React hooks for all blockchain interactions
 - You need simplified chain management
 
-### Choose Papi When:
+### Choose PAPI When:
 
-- You have an existing Papi-based application
-- You need specific Papi features not available in Dedot
+- You have an existing PAPI-based application
+- You need specific PAPI features not available in Dedot
 - You want more direct control over blockchain interactions
-- You're familiar with Papi's API and prefer its approach
+- You're familiar with PAPI's API and prefer its approach
 
 ## Examples
 
 - [Complete Dedot Integration](/examples/vite) - Full LunoKit features
-- [Papi Integration](/examples/vite-papi) - Wallet connections only 
+- [PAPI Integration](/examples/vite-papi) - Wallet connections only 

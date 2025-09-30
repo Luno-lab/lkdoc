@@ -1,14 +1,14 @@
-# Vite + Papi Integration
+# Vite + PAPI Integration
 
-Learn how to integrate LunoKit's wallet connection features with Papi in a Vite project.
+Learn how to integrate LunoKit's wallet connection features with PAPI in a Vite project.
 
 ## Overview
 
-This example demonstrates how to use LunoKit for wallet connections while using Papi for blockchain interactions. This approach is ideal when:
+This example demonstrates how to use LunoKit for wallet connections while using PAPI for blockchain interactions. This approach is ideal when:
 
-- You already have an existing Papi-based application
+- You already have an existing PAPI-based application
 - You need more direct control over blockchain interactions
-- You want to use specific Papi features while leveraging LunoKit's wallet connection capabilities
+- You want to use specific PAPI features while leveraging LunoKit's wallet connection capabilities
 
 ## Environment Setup
 
@@ -51,9 +51,9 @@ This example showcases two main integration aspects:
    - Setting up LunoKit without specifying chains
    - Configuring only wallet connectors
 
-2. **Using usePapiSigner with Papi**
-   - Retrieving a Papi-compatible signer from connected wallets
-   - Using the signer with Papi's transaction methods
+2. **Using usePapiSigner with PAPI**
+   - Retrieving a PAPI-compatible signer from connected wallets
+   - Using the signer with PAPI's transaction methods
 
 ## What You'll See
 
@@ -61,14 +61,14 @@ The example demonstrates:
 - Basic LunoKit setup with Vite
 - Multiple wallet support (Polkadot{.js}, SubWallet, Talisman, Polkagate, Walletconnect, NovaWallet)
 - Account connection using LunoKit
-- Blockchain interactions using Papi
-- Balance queries using Papi's native methods
+- Blockchain interactions using PAPI
+- Balance queries using PAPI's native methods
 - Transaction signing using LunoKit's usePapiSigner
 - Theme color switching
 
 ## Live Demo
 
-Try the live demo: [Vite + Papi Example](https://luno-kit-with-papi.vercel.app)
+Try the live demo: [Vite + PAPI Example](https://luno-kit-with-papi.vercel.app)
 
 ## Source Code
 
@@ -77,4 +77,4 @@ View the complete source code: [GitHub - with-vite-papi](https://github.com/Luno
 ## Further Reading
 
 - [usePapiSigner Hook Documentation](/hooks/transaction/use-papi-signer)
-- [Papi Documentation](https://papi.how/)
+- [PAPI Documentation](https://papi.how/)

@@ -17,9 +17,9 @@ When using Dedot (default), you have access to all LunoKit features including:
 - Transaction handling
 - Data queries
 
-## Alternative: Papi Integration
+## Alternative: PAPI Integration
 
-If you prefer to use [Papi](https://papi.how/) for blockchain interactions, you can use LunoKit for wallet connections only:
+If you prefer to use [PAPI](https://papi.how/) for blockchain interactions, you can use LunoKit for wallet connections only:
 
 ### What You Can Use
 - Wallet connection hooks (`useConnect`, `useAccount`, etc.)
@@ -32,7 +32,7 @@ If you prefer to use [Papi](https://papi.how/) for blockchain interactions, you 
 - Built-in chain management
 
 ### Configuration
-When using Papi, configure LunoKit without chains:
+When using PAPI, configure LunoKit without chains:
 
 ```tsx
 const config = createConfig({
@@ -44,31 +44,31 @@ const config = createConfig({
 
 ## Choosing Your Approach
 
-| Feature | Dedot (Default) | Papi Integration |
+| Feature | Dedot (Default) | PAPI Integration |
 |---------|----------------|------------------|
 | Wallet Connections | ✅ Full support | ✅ Full support |
-| Transaction Handling | ✅ Built-in | ❌ Use Papi directly |
-| Chain Management | ✅ Built-in | ❌ Use Papi directly |
-| Data Queries | ✅ Built-in | ❌ Use Papi directly |
+| Transaction Handling | ✅ Built-in | ❌ Use PAPI directly |
+| Chain Management | ✅ Built-in | ❌ Use PAPI directly |
+| Data Queries | ✅ Built-in | ❌ Use PAPI directly |
 | Signer Access | ✅ useSigner | ✅ usePapiSigner |
 | UI Components | ✅ Full support | ✅ Full support |
-| Setup Complexity | Simple | Requires Papi setup |
+| Setup Complexity | Simple | Requires PAPI setup |
 
 ## Migration Guide
 
-### From Dedot to Papi
+### From Dedot to PAPI
 1. Remove chains from your LunoKit config
-2. Replace `useSendTransaction` with Papi's transaction methods
-3. Replace `useApi` with Papi client initialization
+2. Replace `useSendTransaction` with PAPI's transaction methods
+3. Replace `useApi` with PAPI client initialization
 4. Use `usePapiSigner` instead of `useSigner`
 
-### From Papi to Dedot
+### From PAPI to Dedot
 1. Add chains to your LunoKit config
-2. Replace Papi transaction methods with `useSendTransaction`
-3. Replace Papi client with `useApi`
+2. Replace PAPI transaction methods with `useSendTransaction`
+3. Replace PAPI client with `useApi`
 4. Use `useSigner` instead of `usePapiSigner`
 
 ## Examples
 
 - [Complete Dedot Integration](/examples/vite) - Full LunoKit features
-- [Papi Integration](/examples/vite-papi) - Wallet connections only
+- [PAPI Integration](/examples/vite-papi) - Wallet connections only
