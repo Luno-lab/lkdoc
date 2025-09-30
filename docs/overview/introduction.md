@@ -8,6 +8,7 @@ LunoKit provides a fast, easy and highly customizable way for developers to add 
 
 Out of the box, LunoKit provides:
 
+- 🔄 **Compatible with Existing Projects** - Seamlessly integrate with Dedot, PAPI, @polkadot/api
 - 🔌 **Multi-wallet Support** - Support for major Polkadot ecosystem wallets with unified API
 - ⚡ **TypeScript First** - Full type safety and IntelliSense support out of the box  
 - 🎨 **Customizable UI** - Beautiful components with flexible theming and styling options
@@ -15,7 +16,7 @@ Out of the box, LunoKit provides:
 - 🌐 **Multi-chain Ready** - Polkadot, Kusama, parachains and custom chain support
 - ⚙️ **React Hooks** - Modern React patterns with comprehensive hook library
 - 🧩 **Flexible Integration** - Use only wallet connection features or the full API based on your needs
-- 🔄 **Compatible with Existing Projects** - Seamlessly integrate with papi or other Polkadot libraries
+
 
 ## Supported Wallets
 
