@@ -1,4 +1,4 @@
-# API Choices
+# Integration Modes
 
 LunoKit provides flexible integration options depending on your dapp's technical requirements.
 
