@@ -85,6 +85,68 @@ npm install @luno-kit/core
 - Utility functions and type definitions
 - Framework-agnostic functionality
 
+## Integration Patterns
+
+LunoKit offers flexible integration patterns to suit different project needs:
+
+### Full API Integration
+
+Use LunoKit's complete API capabilities with built-in chain support:
+
+```tsx
+import { createConfig } from '@luno-kit/react'
+import { polkadot } from '@luno-kit/react/chains'
+import { polkadotjsConnector } from '@luno-kit/react/connectors'
+
+const config = createConfig({
+  appName: 'My Dapp',
+  chains: [polkadot],
+  connectors: [polkadotjsConnector()],
+})
+```
+
+### Wallet Connection Only
+
+Use LunoKit solely for wallet connections without chain integration:
+
+```tsx
+import { createConfig } from '@luno-kit/react'
+import { polkadotjsConnector } from '@luno-kit/react/connectors'
+
+const config = createConfig({
+  appName: 'My Dapp',
+  // No chains required
+  connectors: [polkadotjsConnector()],
+})
+```
+
+### Integration with papi
+
+Get a papi-compatible signer from the connected wallet:
+
+```tsx
+import { usePapiSigner } from '@luno-kit/react'
+import { ApiPromise } from '@polkadot/api'
+
+function MyComponent() {
+  const { signer, isLoading } = usePapiSigner()
+  const [api, setApi] = useState<ApiPromise>()
+  
+  useEffect(() => {
+    // Initialize your papi instance
+    // ...
+    
+    // Use the signer with your papi instance when available
+    if (signer && api) {
+      // Now you can use the signer with papi transactions
+      // api.tx.balances.transfer(...).signAndSend(address, { signer })
+    }
+  }, [signer, api])
+  
+  // Your component UI
+}
+```
+
 ## Peer Dependencies
 
 LunoKit requires these peer dependencies:

@@ -17,6 +17,9 @@ hero:
       link: https://demo.lunolab.xyz/
 
 features:
+  - icon: 🔄
+    title: Compatible with Existing Projects
+    details: Seamlessly integrate with Dedot, PAPI, @polkadot/api
   - icon: 🔌
     title: Multi-wallet Support
     details: Support for major Polkadot ecosystem wallets with unified API
@@ -35,4 +38,8 @@ features:
   - icon: ⚙️
     title: React Hooks
     details: Modern React patterns with comprehensive hook library
+  - icon: 🧩
+    title: Flexible Integration
+    details: Use only wallet connection features or the full API based on your needs
+
 ---
