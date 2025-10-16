@@ -6,17 +6,17 @@ LunoKit supports all major Polkadot ecosystem wallets through a unified connecto
 
 LunoKit provides built-in support for these popular Polkadot wallets:
 
-| Wallet | Type | Platforms     | Import |
-|--------|------|---------------|--------|
-| Polkadot{.js} | Browser Extension | Desktop       | `polkadotjsConnector()` |
-| SubWallet | Browser Extension + Mobile | All           | `subwalletConnector()` |
-| Talisman | Browser Extension | Desktop       | `talismanConnector()` |
-| PolkaGate | Browser Extension | Desktop       | `polkagateConnector()` |
-| Nova Wallet | Mobile App | Mobile via QR       | `novaConnector()` |
+| Wallet        | Type | Platforms     | Import |
+|---------------|------|---------------|--------|
+| Polkadot{.js}            | Browser Extension | Desktop       | `polkadotjsConnector()` |
+| SubWallet     | Browser Extension + Mobile | All           | `subwalletConnector()` |
+| Talisman      | Browser Extension | Desktop       | `talismanConnector()` |
+| PolkaGate     | Browser Extension | Desktop       | `polkagateConnector()` |
+| Nova Wallet   | Mobile App | Mobile via QR       | `novaConnector()` |
 | WalletConnect | Protocol | Mobile via QR | `walletConnectConnector()` |
-| Enkrypt | Browser Extension | Desktop       | `enkryptConnector()` |
-| Fearless | Browser App | Mobile        | `fearlessConnector()` |
-| Mimir | Multisig Extension | Desktop       | `mimirConnector()` |
+| Enkrypt       | Browser Extension | Desktop       | `enkryptConnector()` |
+| Fearless      | Browser App | Mobile        | `fearlessConnector()` |
+| Mimir         | Multisig Extension | Desktop       | `mimirConnector()` |
 
 ## Basic Configuration
 
@@ -40,6 +40,7 @@ const config = createConfig({
   appName: 'My Lunokit App',
   chains: [polkadot, kusama],
   connectors: [
+    // InjectConnector type - no parameters required
     polkadotjsConnector(),
     subwalletConnector(),
     talismanConnector(),
@@ -47,11 +48,81 @@ const config = createConfig({
     enkryptConnector(),
     fearlessConnector(),
     mimirConnector(),
-    walletConnectConnector({ projectId: xxx }),
-    novaConnector({ projectId: xxx }),
+
+    // WalletConnectConnector type - requires projectId
+    walletConnectConnector({ projectId: YOUR_WALLETCONNECT_PROJECT_ID }),
+    novaConnector({ projectId: YOUR_WALLETCONNECT_PROJECT_ID }),
   ],
 })
 ```
+
+## Connector Types
+
+LunoKit provides two main types of wallet connectors:
+
+### InjectConnector
+
+These connectors interact with browser extensions or injected providers and don't require additional parameters:
+
+| Connector | Wallet |
+|-----------|--------|
+| `polkadotjsConnector()` | Polkadot{.js} |
+| `subwalletConnector()` | SubWallet |
+| `talismanConnector()` | Talisman |
+| `polkagateConnector()` | PolkaGate |
+| `enkryptConnector()` | Enkrypt |
+| `fearlessConnector()` | Fearless |
+| `mimirConnector()` | Mimir |
+
+### WalletConnectConnector
+
+QR-based connectors that require additional configuration:
+
+| Connector | Wallet |
+|-----------|--------|
+| `walletConnectConnector()` | WalletConnect |
+| `novaConnector()` | Nova Wallet |
+
+#### Configuration Options
+
+| Property | Type | Description                                                                                                        |
+|----------|------|--------------------------------------------------------------------------------------------------------------------|
+| `projectId` | `string` | **Required**. Project ID from WalletConnect Cloud                                                                  |
+| `relayUrl` | `string` | Optional. Custom relay server URL                                                                                  |
+| `metadata` | [`Metadata`](#metadata) | Optional. Application metadata                                                                                     |
+| `supportedChains` | `HexString[]` | Optional. If you don't want to use the chain-related functions of LunoKit, but you still want to use walletconnect |
+| `links` | [`ConnectorLinks`](#connectorlinks) | Optional. Links to browser extension and deep link |
+
+> Note: You must register a project at [WalletConnect Cloud](https://cloud.walletconnect.com/) to obtain a projectId.
+
+### Related Types
+
+#### Metadata
+
+```ts
+interface Metadata {
+  name: string;
+  description: string;
+  url: string;
+  icons: string[];
+  verifyUrl?: string;
+  redirect?: {
+    native?: string;
+    universal?: string;
+    linkMode?: boolean;
+  };
+}
+```
+
+#### ConnectorLinks
+
+```tsx
+interface ConnectorLinks {
+  browserExtension?: string; 
+  deepLink?: string;
+}
+```
+
 
 ## Wallet Detection
 

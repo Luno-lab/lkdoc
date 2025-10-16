@@ -39,9 +39,21 @@ When using PAPI, configure LunoKit without chains:
 const config = createConfig({
   appName: 'My App',
   // No chains required
-  connectors: [/* your connectors */],
+  connectors: [
+    polkadotjsConnector(),
+    subwalletConnector(),
+
+    /* your connectors */
+    walletConnectConnector({
+      projectId: 'YOUR_PROJECT_ID',
+      // Required when not using LunoKit's chain management
+      supportedChains: ['0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3'] // Polkadot GenesisHash
+    }),
+  ],
 })
 ```
+> [!IMPORTANT]
+> When using PAPI or @polkadot/api integration (without LunoKit's chain management), you **must** configure the `supportedChains` parameter for WalletConnect-based connectors. This parameter should contain an array of chain genesis hashes.
 
 ## Alternative: @polkadot/api Integration
 
@@ -64,9 +76,22 @@ When using @polkadot/api, configure LunoKit without chains:
 const config = createConfig({
   appName: 'My App',
   // No chains required
-  connectors: [/* your connectors */],
+  connectors: [
+    polkadotjsConnector(),
+    subwalletConnector(),
+
+    /* your connectors */
+    walletConnectConnector({
+      projectId: 'YOUR_PROJECT_ID',
+      // Required when not using LunoKit's chain management
+      supportedChains: ['0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3'] // Polkadot GenesisHash
+    }),
+  ],
 })
 ```
+> [!IMPORTANT]
+> When using PAPI or @polkadot/api integration (without LunoKit's chain management), you **must** configure the `supportedChains` parameter for WalletConnect-based connectors. This parameter should contain an array of chain genesis hashes.
+
 
 ## Feature Comparison
 
