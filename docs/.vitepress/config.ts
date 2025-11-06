@@ -62,7 +62,7 @@ export default defineConfig({
             { text: 'Chains', link: '/getting-started/chains' },
             { text: 'Wallets', link: '/getting-started/wallets' },
             { text: 'Theming', link: '/getting-started/theming' },
-            { text: 'Subscan Integration', link: '/getting-started/subscan-integration' },
+            { text: 'Asset List', link: '/getting-started/asset-list' },
             { text: 'Testing', link: '/getting-started/testing' },
           ]
         },
@@ -94,7 +94,7 @@ export default defineConfig({
             { text: 'Chains', link: '/getting-started/chains' },
             { text: 'Wallets', link: '/getting-started/wallets' },
             { text: 'Theming', link: '/getting-started/theming' },
-            { text: 'Subscan Integration', link: '/getting-started/subscan-integration' },
+            { text: 'Asset List', link: '/getting-started/asset-list' },
             { text: 'Testing', link: '/getting-started/testing' },
           ]
         },

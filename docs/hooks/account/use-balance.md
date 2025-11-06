@@ -1,6 +1,6 @@
 # useBalance
 
-The `useBalance` hook provides access to account balance information including free, reserved, frozen, and transferable amounts.
+The `useBalance` hook provides access to the account's native token balance information, including free, reserved, frozen, and transferable amounts.
 
 ## Import
 

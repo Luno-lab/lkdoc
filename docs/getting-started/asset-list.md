@@ -1,4 +1,4 @@
-# Subscan Integration
+# Asset List
 
 LunoKit supports Subscan API integration for enhanced AssetList functionality. This allows your application to display token balances and other asset information using Subscan's data.
 
@@ -44,6 +44,3 @@ To obtain a Subscan API key:
 3. Create a new API key for your application
 4. Copy the API key and add it to your LunoKit configuration
 
-## Related
-
-- [useBalance Hook](/hooks/account/use-balance)
