@@ -12,12 +12,15 @@ Before running the example, you need to configure your WalletConnect ID:
    cp .env.example .env
    ```
 
-2. Edit `.env` and replace `VITE_WALLET_CONNECT_ID` with your own WalletConnect ID:
+2. Edit `.env` and replace the environment variables with your own values:
    ```bash
    VITE_WALLET_CONNECT_ID=your_walletconnect_id
+   VITE_SUBSCAN_API_KEY=your_subscan_api_key
    ```
 
 You can get a WalletConnect ID from [WalletConnect Cloud](https://dashboard.reown.com/).
+
+For Subscan API Key, register at [Subscan](https://www.subscan.io/) and create an API key in your account dashboard.
 
 ## Quick Start
 

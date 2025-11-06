@@ -57,6 +57,10 @@ const acalaChain = defineChain({
   blockExplorers: {
     default: { name: 'Subscan', url: 'https://acala.subscan.io' },
   },
+  subscan: {
+    api: 'https://acala.api.subscan.io',
+    url: 'https://acala.subscan.io',
+  },
 })
 
 // Moonbeam parachain example
@@ -81,6 +85,25 @@ const moonbeamChain = defineChain({
 })
 ```
 
+## Subscan Integration
+
+For chains that support Subscan, you can configure Subscan API endpoints to enable enhanced AssetList functionality:
+
+```tsx
+const myChain = defineChain({
+  // ... other chain properties
+  subscan: {
+    api: 'https://polkadot.api.subscan.io',  // Subscan API endpoint
+    url: 'https://polkadot.subscan.io',      // Subscan explorer URL
+  },
+})
+```
+
+This configuration works together with the global Subscan API key in your `createConfig` to provide enhanced asset information.
+
+> [!TIP]
+> The `subscan.api` should match the chain's Subscan API endpoint. For example, Polkadot uses `https://polkadot.api.subscan.io`, while Kusama uses `https://kusama.api.subscan.io`.
+
 ## Chain Properties Reference
 
 | Property | Type | Required | Description |
@@ -93,3 +116,4 @@ const moonbeamChain = defineChain({
 | `testnet` | `boolean` | Yes | Whether the chain is a testnet |
 | `chainIconUrl` | `string` | Yes | URL to chain icon |
 | `blockExplorers` | `{ default?: { name: string; url: string }; [key: string]: { name: string; url: string } \| undefined }` | No | Block explorer configuration |
+| `subscan` | `{ api: string; url: string }` | No | Subscan API endpoint and explorer URL configuration for enhanced asset data |
