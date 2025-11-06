@@ -85,9 +85,9 @@ const moonbeamChain = defineChain({
 })
 ```
 
-## Subscan Integration
+## Asset List(optional)
 
-For chains that support Subscan, you can configure Subscan API endpoints to enable enhanced AssetList functionality:
+For chains that support Asset List, you can configure Subscan API endpoints to enable enhanced AssetList functionality:
 
 ```tsx
 const myChain = defineChain({
