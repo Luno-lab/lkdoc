@@ -42,6 +42,65 @@ function SendTransactionButton() {
 <<< ../../../snippets/config.ts[config.ts]
 :::
 
+### Custom Wait Strategy
+
+You can control when the transaction is considered complete using the `waitFor` parameter:
+
+::: code-group
+```tsx [WaitForInBlock.tsx]
+import { useSendTransaction } from '@luno-kit/react'
+
+function QuickTransactionButton() {
+  const { api } = useApi();
+  const { sendTransaction, isPending } = useSendTransaction({
+    waitFor: 'inBlock',  // Consider transaction complete when included in a block
+  })
+
+  const handleSend = () => {
+    const transferExtrinsic = api.tx.balances.transferKeepAlive(to, amount)
+    sendTransaction({ extrinsic: transferExtrinsic })
+  }
+
+  return (
+    <button onClick={handleSend} disabled={isPending}>
+      Send Transaction (Wait for InBlock)
+    </button>
+  )
+}
+```
+<<< ../../../snippets/config.ts[config.ts]
+:::
+
+**Wait Strategies:**
+
+- **`'inBlock'`**: Transaction is considered complete when it's included in a block. Faster but less secure as the block could be reverted.
+- **`'finalized'`**: Transaction is considered complete when the block is finalized. Slower but more secure (default).
+
+::: code-group
+```tsx [WaitForFinalized.tsx]
+import { useSendTransaction } from '@luno-kit/react'
+
+function SecureTransactionButton() {
+  const { api } = useApi();
+  const { sendTransaction, isPending } = useSendTransaction({
+    waitFor: 'finalized',  // Wait for block finalization (default)
+  })
+
+  const handleSend = () => {
+    const transferExtrinsic = api.tx.balances.transferKeepAlive(to, amount)
+    sendTransaction({ extrinsic: transferExtrinsic })
+  }
+
+  return (
+    <button onClick={handleSend} disabled={isPending}>
+      Send Transaction (Wait for Finalized)
+    </button>
+  )
+}
+```
+<<< ../../../snippets/config.ts[config.ts]
+:::
+
 ### Async Usage with Callbacks
 
 ::: code-group
@@ -208,6 +267,7 @@ The hook accepts an optional configuration object:
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
+| `waitFor` | `'inBlock' \| 'finalized'` | No | When to consider the transaction complete. Default: `'finalized'` |
 | `onSuccess` | `(data: TransactionReceipt) => void` | No | Callback when transaction succeeds |
 | `onError` | `(error: Error) => void` | No | Callback when transaction fails |
 | `onSettled` | `() => void` | No | Callback when transaction completes (success or failure) |
@@ -263,6 +323,7 @@ interface TransactionReceipt {
   dispatchError?: DispatchError;      // Dispatch error if failed
   errorMessage?: string;              // Human-readable error message
   dispatchInfo?: DispatchInfo;        // Dispatch information
+  rawReceipt: ISubmittableResult;     // Raw transaction result from the blockchain API
 }
 ```
 
