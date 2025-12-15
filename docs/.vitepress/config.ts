@@ -69,6 +69,7 @@ export default defineConfig({
         {
           text: '🔧 Advanced',
           items: [
+            { text: 'App Info', link: '/getting-started/app-info' },
             { text: 'Custom ConnectButton', link: '/getting-started/custom-connect-button' },
             { text: 'Custom Wallet', link: '/getting-started/custom-wallet' },
             { text: 'Custom Chains', link: '/getting-started/custom-chains' },
@@ -101,6 +102,7 @@ export default defineConfig({
         {
           text: '🔧 Advanced',
           items: [
+            { text: 'App Info', link: '/getting-started/app-info' },
             { text: 'Custom ConnectButton', link: '/getting-started/custom-connect-button' },
             { text: 'Custom Wallet', link: '/getting-started/custom-wallet' },
             { text: 'Custom Chains', link: '/getting-started/custom-chains' },
