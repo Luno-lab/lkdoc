@@ -9,6 +9,7 @@ import { LunoKitProvider, ConnectButton } from '@luno-kit/ui'
 import { createConfig } from '@luno-kit/react'
 import { polkadot } from '@luno-kit/react/chains'
 import { polkadotjsConnector } from '@luno-kit/react/connectors'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import '@luno-kit/ui/styles.css'
 
 const config = createConfig({
@@ -17,11 +18,15 @@ const config = createConfig({
   connectors: [polkadotjsConnector()],
 })
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <LunoKitProvider config={config}>
-      <ConnectButton />
-    </LunoKitProvider>
+    <QueryClientProvider client={queryClient}>
+      <LunoKitProvider config={config}>
+        <ConnectButton />
+      </LunoKitProvider>
+    </QueryClientProvider>
   )
 }
 ```

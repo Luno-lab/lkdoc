@@ -8,27 +8,32 @@ LunoKit provides a comprehensive theming system that allows you to customize the
 
 ```tsx
 import { LunoKitProvider, createConfig } from '@luno-kit/react'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 
 const config = createConfig({
   // ... your config
 })
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <LunoKitProvider
-      config={config}
-      theme={{
-        light: {
-          colors: {
-            accentColor: '#E6007A',
-            connectButtonBackground: '#1a1b23',
-            connectButtonText: '#ffffff',
+    <QueryClientProvider client={queryClient}>
+      <LunoKitProvider
+        config={config}
+        theme={{
+          light: {
+            colors: {
+              accentColor: '#E6007A',
+              connectButtonBackground: '#1a1b23',
+              connectButtonText: '#ffffff',
+            }
           }
-        }
-      }}
-    >
-      {/* Your app */}
-    </LunoKitProvider>
+        }}
+      >
+        {/* Your app */}
+      </LunoKitProvider>
+    </QueryClientProvider>
   )
 }
 ```
@@ -36,25 +41,27 @@ function App() {
 ### Light and Dark Mode
 
 ```tsx
-<LunoKitProvider
-  config={config}
-  theme={{
-    light: {
-      colors: {
-        modalBackground: '#ffffff',
-        modalText: '#1a1b23',
+<QueryClientProvider client={queryClient}>
+  <LunoKitProvider
+    config={config}
+    theme={{
+      light: {
+        colors: {
+          modalBackground: '#ffffff',
+          modalText: '#1a1b23',
+        }
+      },
+      dark: {
+        colors: {
+          modalBackground: '#1a1b23',
+          modalText: '#ffffff',
+        }
       }
-    },
-    dark: {
-      colors: {
-        modalBackground: '#1a1b23',
-        modalText: '#ffffff',
-      }
-    }
-  }}
->
-  {/* Your app */}
-</LunoKitProvider>
+    }}
+  >
+    {/* Your app */}
+  </LunoKitProvider>
+</QueryClientProvider>
 ```
 
 ### Auto Theme Mode
@@ -62,12 +69,14 @@ function App() {
 Automatically follow system theme preferences:
 
 ```tsx
-<LunoKitProvider
-  config={config}
-  theme={{ autoMode: true }}
->
-  {/* Your app */}
-</LunoKitProvider>
+<QueryClientProvider>
+  <LunoKitProvider
+    config={config}
+    theme={{ autoMode: true }}
+  >
+    {/* Your app */}
+  </LunoKitProvider>
+</QueryClientProvider>
 ```
 
 ## Theme Configuration

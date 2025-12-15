@@ -12,13 +12,18 @@ By default, LunoKit modals are responsive and adapt to different screen sizes:
 
 ```tsx
 import { LunoKitProvider, ConnectButton } from '@luno-kit/ui'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <LunoKitProvider config={config}>
-      {/* Default modal behavior */}
-      <ConnectButton />
-    </LunoKitProvider>
+    <QueryClientProvider client={queryClient}>
+      <LunoKitProvider config={config}>
+        {/* Default modal behavior */}
+        <ConnectButton />
+      </LunoKitProvider>
+    </QueryClientProvider>
   )
 }
 ```
@@ -30,14 +35,16 @@ function App() {
 Perfect for mobile-first designs or when screen space is limited:
 
 ```tsx
-<LunoKitProvider 
-  config={{
-    ...config,
-    modalSize: 'compact'
-  }}
->
-  <ConnectButton />
-</LunoKitProvider>
+<QueryClientProvider {...}>
+  <LunoKitProvider 
+    config={{
+      ...config,
+      modalSize: 'compact'
+    }}
+  >
+    <ConnectButton />
+  </LunoKitProvider>
+</QueryClientProvider>
 ```
 
 ### Wide Size  
@@ -45,14 +52,16 @@ Perfect for mobile-first designs or when screen space is limited:
 Provides more space for wallet lists and account information:
 
 ```tsx
-<LunoKitProvider
-  config={{
-    ...config,
-    modalSize: 'wide'
-  }}
->
-  <ConnectButton />
-</LunoKitProvider>
+<QueryClientProvider {...}>
+  <LunoKitProvider
+    config={{
+      ...config,
+      modalSize: 'wide'
+    }}
+  >
+    <ConnectButton />
+  </LunoKitProvider>
+</QueryClientProvider>
 ```
 
 ## Related Documentation

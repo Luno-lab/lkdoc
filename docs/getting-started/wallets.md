@@ -8,15 +8,17 @@ LunoKit provides built-in support for these popular Polkadot wallets:
 
 | Wallet        | Type | Platforms     | Import |
 |---------------|------|---------------|--------|
-| Polkadot{.js}            | Browser Extension | Desktop       | `polkadotjsConnector()` |
+| Polkadot{.js} | Browser Extension | Desktop       | `polkadotjsConnector()` |
 | SubWallet     | Browser Extension + Mobile | All           | `subwalletConnector()` |
 | Talisman      | Browser Extension | Desktop       | `talismanConnector()` |
 | PolkaGate     | Browser Extension | Desktop       | `polkagateConnector()` |
-| Nova Wallet   | Mobile App | Mobile via QR       | `novaConnector()` |
+| Nova Wallet   | Mobile App | Mobile via QR | `novaConnector()` |
 | WalletConnect | Protocol | Mobile via QR | `walletConnectConnector()` |
 | Enkrypt       | Browser Extension | Desktop       | `enkryptConnector()` |
 | Fearless      | Browser App | Mobile        | `fearlessConnector()` |
 | Mimir         | Multisig Extension | Desktop       | `mimirConnector()` |
+| OneKey        | Hardware Wallet (Browser Extension + Mobile App) | All           | `onekeyConnector()` |
+| Ledger        | Hardware Wallet | Desktop           | `ledgerConnector()` |
 
 ## Basic Configuration
 
@@ -34,11 +36,15 @@ import {
   fearlessConnector, 
   mimirConnector, 
   enkryptConnector,
+  onekeyConnector,
+  ledgerConnector,
 } from '@luno-kit/react/connectors'
+
+const chains = [polkadot, kusama]
 
 const config = createConfig({
   appName: 'My Lunokit App',
-  chains: [polkadot, kusama],
+  chains,
   connectors: [
     // InjectConnector type - no parameters required
     polkadotjsConnector(),
@@ -48,17 +54,21 @@ const config = createConfig({
     enkryptConnector(),
     fearlessConnector(),
     mimirConnector(),
+    onekeyConnector(),
 
     // WalletConnectConnector type - requires projectId
     walletConnectConnector({ projectId: YOUR_WALLETCONNECT_PROJECT_ID }),
     novaConnector({ projectId: YOUR_WALLETCONNECT_PROJECT_ID }),
+
+    // LedgerConnector type - requires chains parameter
+    ledgerConnector({ chains }),
   ],
 })
 ```
 
 ## Connector Types
 
-LunoKit provides two main types of wallet connectors:
+LunoKit provides three main types of wallet connectors:
 
 ### InjectConnector
 
@@ -73,6 +83,7 @@ These connectors interact with browser extensions or injected providers and don'
 | `enkryptConnector()` | Enkrypt |
 | `fearlessConnector()` | Fearless |
 | `mimirConnector()` | Mimir |
+| `onekeyConnector()` | OneKey |
 
 ### WalletConnectConnector
 
@@ -94,6 +105,20 @@ QR-based connectors that require additional configuration:
 | `links` | [`ConnectorLinks`](#connectorlinks) | Optional. Links to browser extension and deep link |
 
 > Note: You must register a project at [WalletConnect Cloud](https://cloud.walletconnect.com/) to obtain a projectId.
+
+### LedgerConnector
+
+Hardware wallet connector that requires chains configuration:
+
+| Connector | Wallet |
+|-----------|--------|
+| `ledgerConnector()` | Ledger |
+
+#### Configuration Options
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `chains` | [`readonly Chain[]`](#chain) | **Required**. Array of chains to support with Ledger |
 
 ### Related Types
 
@@ -122,6 +147,47 @@ interface ConnectorLinks {
   deepLink?: string;
 }
 ```
+
+#### Chain
+
+```ts
+export interface Chain {
+  genesisHash: HexString;
+
+  name: string;
+
+  nativeCurrency: {
+    name: string;
+    symbol: string;
+    decimals: number;
+  };
+
+  rpcUrls: {
+    webSocket: Transport;
+    http?: readonly string[];
+  };
+
+  ss58Format: number;
+
+  blockExplorers?: {
+    default?: { name: string; url: string };
+    [key: string]: { name: string; url: string };
+  };
+
+  testnet: boolean;
+
+  chainIconUrl: string;
+
+  subscan?: { api: string; url: string; };
+}
+```
+The `Chain` type represents a blockchain configuration. Import it from `@luno-kit/react`:
+
+```tsx
+import type { Chain } from '@luno-kit/react'
+```
+
+For detailed information about chain configuration, see [Custom Chains](/getting-started/custom-chains).
 
 
 ## Wallet Detection
