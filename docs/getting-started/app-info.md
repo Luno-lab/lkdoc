@@ -1,10 +1,11 @@
 # App Info
 
-Configure application metadata and information for LunoKitProvider to enhance wallet connection experience and provide better context to users.
+Configure your app’s branding and compliance metadata for LunoKit’s Connect Modal.
 
 ## Overview
 
-The `appInfo` parameter allows you to provide detailed information about your application that will be displayed in wallet connection modals and used by wallet extensions for better user experience.
+The`appInfo` lets integrators inject app-specific branding and compliance links into the Connect Modal (e.g., logo, welcome/guide copy, Terms of Service & Privacy Policy).
+This helps users understand who they are connecting to, improves trust and conversion, and enables consistent branding across projects without forking LunoKit.
 
 ## Basic Usage
 
