@@ -13,6 +13,7 @@ import { LunoKitProvider, ConnectButton } from '@luno-kit/ui'
 import { createConfig } from '@luno-kit/react'
 import { polkadot } from '@luno-kit/react/chains'
 import { polkadotjsConnector } from '@luno-kit/react/connectors'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import '@luno-kit/ui/styles.css'
 
 const config = createConfig({
@@ -23,25 +24,27 @@ const config = createConfig({
 
 function App() {
   return (
-    <LunoKitProvider 
-      config={config}
-      appInfo={{
-        decorativeImage: {
-          light: 'https://myapp.com/hero-light.png',
-          dark: 'https://myapp.com/hero-dark.png',
-        },
-        description: 'A decentralized application built on Polkadot',
-        guideText: 'Learn how to connect your wallet',
-        guideLink: 'https://myapp.com/guide',
-        policyLinks: {
-          terms: 'https://myapp.com/terms',
-          privacy: 'https://myapp.com/privacy',
-          target: '_blank',
-        },
-      }}
-    >
-      <ConnectButton />
-    </LunoKitProvider>
+    <QueryClientProvider client={queryClient}>
+      <LunoKitProvider 
+        config={config}
+        appInfo={{
+          decorativeImage: {
+            light: 'https://myapp.com/hero-light.png',
+            dark: 'https://myapp.com/hero-dark.png',
+          },
+          description: 'A decentralized application built on Polkadot',
+          guideText: 'Learn how to connect your wallet',
+          guideLink: 'https://myapp.com/guide',
+          policyLinks: {
+            terms: 'https://myapp.com/terms',
+            privacy: 'https://myapp.com/privacy',
+            target: '_blank',
+          },
+        }}
+      >
+        <ConnectButton />
+      </LunoKitProvider>
+    </QueryClientProvider>
   )
 }
 ```

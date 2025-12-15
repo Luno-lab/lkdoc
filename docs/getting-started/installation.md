@@ -194,10 +194,12 @@ For Remix projects, ensure client-side rendering for wallet components:
 ```tsx
 import { ClientOnly } from 'remix-utils'
 
+const queryClient = new QueryClient();
+
 export default function App() {
   return (
     <ClientOnly fallback={<div>Loading...</div>}>
-      {() => <LunoKitProvider config={config}>...</LunoKitProvider>}
+      {() => <QueryClientProvider client={queryClient}><LunoKitProvider config={config}>...</LunoKitProvider></QueryClientProvider>}
     </ClientOnly>
   )
 }

@@ -48,6 +48,7 @@ To use `usePapiSigner`, you need to set up LunoKit with just the wallet connecti
 import { createConfig } from '@luno-kit/react'
 import { LunoKitProvider } from '@luno-kit/ui';
 import { polkadotjsConnector } from '@luno-kit/react/connectors'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 
 // Create a config without chains
 const config = createConfig({
@@ -55,11 +56,15 @@ const config = createConfig({
   connectors: [polkadotjsConnector()],
 })
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <LunoKitProvider config={config}>
-      <ConditionalPapiSigner />
-    </LunoKitProvider>
+    <QueryClientProvider client={queryClient}>
+      <LunoKitProvider config={config}>
+        <ConditionalPapiSigner />
+      </LunoKitProvider>
+    </QueryClientProvider>
   )
 }
 ```
