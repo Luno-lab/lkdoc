@@ -169,7 +169,7 @@ export interface LunokitTheme {
         modal: '0 10px 25px rgba(0,0,0,0.2)'
       },
       blurs: {
-        modalOverlay: 'blur(8px)'
+        modalOverlay: '8px'
       }
     }
   }}
@@ -267,7 +267,7 @@ export interface LunokitTheme {
         modal: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
       },
       blurs: {
-        modalOverlay: 'blur(16px)'
+        modalOverlay: '16px'
       }
     }
   }}
