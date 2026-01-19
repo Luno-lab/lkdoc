@@ -41,3 +41,51 @@ img[src='/search.png'] {
   width: 100%;
   aspect-ratio: 1 / 1;
 }
+
+.VPHome .support-badge-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0 16px;
+}
+
+.VPHome .support-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.VPHome .support-badge__logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.VPHome .support-badge__logo img {
+  display: block;
+  height: 104px;
+  width: auto;
+  max-width: min(92vw, 840px);
+}
+
+@media (min-width: 640px) {
+  .VPHome .support-badge__logo img {
+    height: 128px;
+  }
+}
+
+html.dark .VPHome .support-badge__logo img {
+  filter: invert(1) brightness(1.1);
+}
+
+@media (min-width: 960px) {
+  .VPHome .support-badge__logo img {
+    height: 152px;
+  }
+}
