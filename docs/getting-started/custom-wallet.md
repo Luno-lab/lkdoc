@@ -28,6 +28,11 @@ export const customWalletConnector = () => {
 }
 ```
 
+> [!IMPORTANT]
+> The `id` must match the key in `window.injectWeb3[id]`. For example:
+> - `'polkadot-js'` → `window.injectWeb3['polkadot-js']`
+> - `'subwallet-js'` → `window.injectWeb3['subwallet-js']`
+
 ### Example: Polkadot.js Extension
 
 ```tsx
@@ -134,24 +139,24 @@ const config = createConfig({
 
 ### CommonConnector (Window Inject)
 
-| Property | Type | Required | Description |
-|----------|------|----------|-------------|
-| `id` | `string` | Yes | Unique identifier for the wallet |
-| `name` | `string` | Yes | Display name for the wallet |
-| `icon` | `string` | Yes | SVG icon or image URL |
-| `links` | `ConnectorLinks` | Yes | Links object (always present) |
+| Property | Type | Required | Description                                                                             |
+|----------|------|----------|-----------------------------------------------------------------------------------------|
+| `id` | `string` | Yes | Must match the key in `window.injectWeb3[id]` (e.g., `'polkadot-js'`, `'subwallet-js'`) |
+| `name` | `string` | Yes | Display name for the wallet                                                             |
+| `icon` | `string` | Yes | Webp or image URL                                                                       |
+| `links` | `ConnectorLinks` | Yes | Links object (always present)                                                           |
 
 ### WalletConnectConnector
 
-| Property | Type | Required | Description |
-|----------|------|----------|-------------|
+| Property | Type | Required | Description                      |
+|----------|------|----------|----------------------------------|
 | `id` | `string` | Yes | Unique identifier for the wallet |
-| `name` | `string` | Yes | Display name for the wallet |
-| `icon` | `string` | Yes | SVG icon or image URL |
-| `links` | `ConnectorLinks` | Yes | Links object (always present) |
-| `projectId` | `string` | Yes | Your WalletConnect project ID |
-| `relayUrl` | `string` | No | Custom relay URL |
-| `metadata` | `Metadata` | No | App metadata for WalletConnect |
+| `name` | `string` | Yes | Display name for the wallet      |
+| `icon` | `string` | Yes | Webp or image URL                |
+| `links` | `ConnectorLinks` | Yes | Links object (always present)    |
+| `projectId` | `string` | Yes | Your WalletConnect project ID    |
+| `relayUrl` | `string` | No | Custom relay URL                 |
+| `metadata` | `Metadata` | No | App metadata for WalletConnect   |
 
 ### ConnectorLinks Interface
 
