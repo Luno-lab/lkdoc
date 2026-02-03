@@ -19,7 +19,7 @@ export const customWalletConnector = () => {
   return new InjectConnector({
     id: 'inject-wallet',
     name: 'Inject Wallet',
-    icon: 'data:image/svg+xml;base64,...', // Your wallet's icon
+    icon: '...', // Your wallet's icon
     links: {
       browserExtension: 'https://your-wallet.com/download',
       deepLink: 'https://your-wallet.com/deepLink'
@@ -69,7 +69,7 @@ export const customMobileWalletConnector = (config: WalletConnectConfig) => {
   return new WalletConnectConnector({
     id: 'custom-mobile',
     name: 'Custom Mobile Wallet',
-    icon: 'data:image/svg+xml;base64,...',
+    icon: '...',
     links: {
       browserExtension: 'https://your-wallet.com/download',
       deepLink: 'https://your-wallet.com/deepLink'
