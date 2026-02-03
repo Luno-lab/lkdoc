@@ -143,7 +143,7 @@ const config = createConfig({
 |----------|------|----------|-----------------------------------------------------------------------------------------|
 | `id` | `string` | Yes | Must match the key in `window.injectWeb3[id]` (e.g., `'polkadot-js'`, `'subwallet-js'`) |
 | `name` | `string` | Yes | Display name for the wallet                                                             |
-| `icon` | `string` | Yes | Webp or image URL                                                                       |
+| `icon` | `string` | Yes | Image URL or base64-encoded image string                                                                       |
 | `links` | `ConnectorLinks` | Yes | Links object (always present)                                                           |
 
 ### WalletConnectConnector
@@ -152,7 +152,7 @@ const config = createConfig({
 |----------|------|----------|----------------------------------|
 | `id` | `string` | Yes | Unique identifier for the wallet |
 | `name` | `string` | Yes | Display name for the wallet      |
-| `icon` | `string` | Yes | Webp or image URL                |
+| `icon` | `string` | Yes | Image URL or base64-encoded image string              |
 | `links` | `ConnectorLinks` | Yes | Links object (always present)    |
 | `projectId` | `string` | Yes | Your WalletConnect project ID    |
 | `relayUrl` | `string` | No | Custom relay URL                 |
