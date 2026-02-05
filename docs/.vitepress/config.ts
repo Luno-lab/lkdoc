@@ -59,6 +59,7 @@ export default defineConfig({
             { text: 'Installation', link: '/getting-started/installation' },
             { text: 'ConnectButton', link: '/getting-started/connect-button' },
             { text: 'Modal Sizes', link: '/getting-started/modal-sizes' },
+            { text: 'Modal Container', link: '/getting-started/modal-container' },
             { text: 'Chains', link: '/getting-started/chains' },
             { text: 'Wallets', link: '/getting-started/wallets' },
             { text: 'Theming', link: '/getting-started/theming' },
@@ -72,6 +73,7 @@ export default defineConfig({
             { text: 'App Info', link: '/getting-started/app-info' },
             { text: 'Custom ConnectButton', link: '/getting-started/custom-connect-button' },
             { text: 'Custom Wallet', link: '/getting-started/custom-wallet' },
+            { text: 'Wallet Grouping', link: '/getting-started/wallet-grouping' },
             { text: 'Custom Chains', link: '/getting-started/custom-chains' },
             { text: 'Custom Theme', link: '/getting-started/custom-theme' },
           ]
@@ -92,6 +94,7 @@ export default defineConfig({
             { text: 'Installation', link: '/getting-started/installation' },
             { text: 'ConnectButton', link: '/getting-started/connect-button' },
             { text: 'Modal Sizes', link: '/getting-started/modal-sizes' },
+            { text: 'Modal Container', link: '/getting-started/modal-container' },
             { text: 'Chains', link: '/getting-started/chains' },
             { text: 'Wallets', link: '/getting-started/wallets' },
             { text: 'Theming', link: '/getting-started/theming' },
@@ -105,6 +108,7 @@ export default defineConfig({
             { text: 'App Info', link: '/getting-started/app-info' },
             { text: 'Custom ConnectButton', link: '/getting-started/custom-connect-button' },
             { text: 'Custom Wallet', link: '/getting-started/custom-wallet' },
+            { text: 'Wallet Grouping', link: '/getting-started/wallet-grouping' },
             { text: 'Custom Chains', link: '/getting-started/custom-chains' },
             { text: 'Custom Theme', link: '/getting-started/custom-theme' },
           ]
